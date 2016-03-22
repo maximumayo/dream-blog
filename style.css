@@ -1,9 +1,6 @@
 /************* news-feed css **************/
 #bg{
-    position: fixed;
     background-color: #336799;
-    width: 100vw;
-    height: 100vh;
 }
 
 .bgimg{
@@ -51,4 +48,24 @@ h1{
 
 .col-xs-12 {
     padding-bottom: 5%
+}
+
+
+/******* MODAL CSS ******/
+
+.modal-content {
+    border-width: 20px;
+    border-style: ridge;
+    border-color: #336799;
+    background-color: #bbc2c9;
+}
+
+.modal-body textarea{
+  width: 100%;
+}
+
+.modal-body input{
+    width: 40%;
+    font-size: 25px;
+    margin-bottom: 3%;
 }
