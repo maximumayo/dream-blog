@@ -1,8 +1,10 @@
 
-blog.service('getBlogService', function($http){
+blog.service('getBlogService', function($http, $q){
     this.getData = function(){
+        var gbs_self = this;
         var read = 'read';
         var data = $.param({operation: read});
+        var defer = $q.defer();
         $http({
             url: 'operations.php',
             method: 'post',
@@ -14,10 +16,13 @@ blog.service('getBlogService', function($http){
             .then(
                 function(response){
                     console.log('successful Resp: ', response);
+                    defer.resolve(response);
+                    //gbs_self.data = response;
                 },
                 function(response){
                     console.log('Error', response);
-                }
-            )
+                    defer.reject('Fail');
+                });
+            return defer.promise;
     }
 });
