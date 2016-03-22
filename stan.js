@@ -30,13 +30,7 @@ function postNewBlogArticle(added,article,title){
         success: function(response){
             var responseData=response;
             console.log(responseData);
-            // if (response.success){
-            //     console.log(response);
-            //     addClicked(response.id);
-            // }else if (!response.success){
-            //     console.log(response);
-            //     alert(response.errors[0]);
-            // }
+
 
         }
     })
