@@ -4,12 +4,28 @@
 var blog = angular.module('blogApp', ['ui.router']);
 
 blog.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/landing');
 
     $stateProvider
 
-        .state('home', {
-            url: '/home',
+        .state('landing', {
+            url: '/landing',
             templateUrl: 'landing-page.php'
         })
+
+        .state('registration', {
+            url: '/registration',
+            templateUrl: 'registration-page.php'
+        })
+
+        .state('newsfeed', {
+            url: '/newsfeed',
+            templateUrl: 'news-feed.php'
+        })
+
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'profile-page.php'
+        })
+
 });
