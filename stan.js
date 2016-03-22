@@ -5,7 +5,7 @@ function getBlogListFromServer(){
            operation:'read'
         },
         method:'POST',
-        url:'operations/get.php',
+        url:'operations.php',
         success: function(response){
             var responseData = response.data;
             console.log(response);
@@ -26,7 +26,7 @@ function postNewBlogArticle(added,article,title){
             users_id:1
         },
         method:"POST",
-        url:"operations/create.php",
+        url:"operations.php",
         success: function(response){
             var responseData=response;
             console.log(responseData);
@@ -44,7 +44,7 @@ function getAllArticlesOneUser(username){
             username:username
         },
         method:"post",
-        url:"operations/getAllOneUser.php",
+        url:"operations.php",
         success: function(response){
             var responseData=response;
             console.log(responseData);
@@ -62,7 +62,7 @@ function deleteUser(username,password){
             password:password
         },
         method:"post",
-        url:"operations/deleteUser.php",
+        url:"operations.php",
         success: function(response){
             var responseData = response;
             console.log(responseData);
