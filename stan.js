@@ -52,3 +52,20 @@ function getAllArticlesOneUser(username){
         
     })
 }
+
+function deleteUser(username,password){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'delete',
+            username:username,
+            password:password
+        },
+        method:"post",
+        url:"operations/deleteUser.php",
+        success: function(response){
+            var responseData = response;
+            console.log(responseData);
+        }
+    })
+}
