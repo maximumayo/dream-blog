@@ -14,6 +14,9 @@
     <!--css-->
     <link rel="stylesheet" href="style.css">
 
+    <script src="database.js"></script>
+
+
 </head>
 <body ng-app="blogApp">
 <div ui-view></div>
