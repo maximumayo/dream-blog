@@ -1,9 +1,9 @@
 function getBlogListFromServer(){
     $.ajax({
         dataType:'json',
-        // data:{
-        //    api_key:'1111111111'
-        //},
+        data:{
+           operation:'read'
+        },
         method:'POST',
         url:'get.php',
         success: function(response){
@@ -19,7 +19,7 @@ function postNewBlogArticle(added,article,title){
     $.ajax({
         dataType:'json',
         data:{
-            //api_key:'1111111111',
+            operation:'create',
             added:added,
             article:article,
             title:title,
