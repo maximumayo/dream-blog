@@ -39,7 +39,7 @@
     </div>
 
     <!--TODO: Make sure this is an active controller-->
-    <div class="blogPosts" ng-controller="newsFeedController as nfc">
+    <div class="blogPosts">
         <!--<blog-feed-directive></blog-feed-directive>-->
         <!-- <div class='jumbotron'> -->
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createBlogModal">New Post
