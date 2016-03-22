@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="style.css">
 
 
+
 </head>
 <body ng-app="blogApp" id="bg">
 

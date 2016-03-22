@@ -17,7 +17,8 @@ blog.config(function($stateProvider, $urlRouterProvider) {
 
         .state('newsfeed', {
             url: '/newsfeed',
-            templateUrl: 'templates/news-feed.php'
+            templateUrl: 'templates/news-feed.php',
+            controller: 'newsFeedController'
         })
 
         .state('profile', {
