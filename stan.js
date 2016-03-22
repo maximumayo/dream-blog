@@ -35,3 +35,20 @@ function postNewBlogArticle(added,article,title){
         }
     })
 }
+
+function getAllArticlesOneUser(username){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'getAllOneUser',
+            username:username
+        },
+        method:"post",
+        url:"getAllOneUser.php",
+        success: function(response){
+            var responseData=response;
+            console.log(responseData);
+        }
+        
+    })
+}

@@ -7,7 +7,7 @@ $user_id = 1;
 $query = "insert into `posts` set `added`='$added', `article`='$article', `title`='$title', `users_id`='$user_id'";
 $data = ['success' => false];
 $result = mysqli_query($conn,$query);
-if(mysqli_affected_rows($conn)){
+if(mysqli_affected_rows($conn)>0){
     $data = ['success' => true, 'id' => mysqli_insert_id($conn)];
 }
 $data = json_encode($data);
