@@ -26,7 +26,9 @@ $added = Date("Y-m-d H:i:s");
 <button onclick="postNewBlogArticle('<?=$added?>', $('#article').val(), $('#title').val())">Submit</button>
 <br><br><br>
 <button onclick="getBlogListFromServer()">Get from Server</button>
-
+<br><br><br>
+<input id="username" placeholder="username goes here"/> <br><br>
+<button onclick="getAllArticlesOneUser($('#username').val())">Get all one user</button>
 
 </body>
 </html>
