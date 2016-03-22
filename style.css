@@ -1,10 +1,10 @@
 /************* news-feed css **************/
-.backColor{
-    position: fixed;
-    background-color: #336799;
-    width: 100vw;
-    height: 100vh;
-}
+/*.backColor{*/
+    /*position: fixed;*/
+    /*background-color: #336799;*/
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+/*}*/
 
 .bgimg{
     background-image: url('images/dogboy2.png');

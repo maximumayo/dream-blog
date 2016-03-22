@@ -7,7 +7,7 @@ function updateBlog(title,article,users_id){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'update',
+            operation:'editBlog',
             title:title,
             article:article,
             users_id:users_id
@@ -26,7 +26,7 @@ function deleteBlog(title,blogId){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'delete',
+            operation:'deleteBlog',
             title:title,
             blogId:blogId
         },
@@ -39,7 +39,7 @@ function deleteBlog(title,blogId){
 
 }
 
-function newUserCreate(firstname,lastname,email,username,password){
+function newUserCreate(firstname,lastname,email,username,password,phone){
     $.ajax({
         dataType:'json',
         data:{
@@ -48,12 +48,68 @@ function newUserCreate(firstname,lastname,email,username,password){
             lastName:lastname,
             email:email,
             username:username,
-            password:password
+            password:password,
+            phone:phone
         },
         method:'POST',
         url:'operations.php',
         success:function(response){
             console.log(response);
         }
+    })
+}
+
+function getBlogListFromServer(){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'read'
+        },
+        method:'POST',
+        url:'operations.php',
+        success: function(response){
+            var responseData = response.data;
+            console.log(response);
+
+
+        }
+    })
+}
+
+function postNewBlogArticle(added,article,title){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'create',
+            added:added,
+            article:article,
+            title:title,
+            users_id:1
+        },
+        method:"POST",
+        url:"operations.php",
+        success: function(response){
+            var responseData=response;
+            console.log(responseData);
+
+
+        }
+    })
+}
+
+function getAllArticlesOneUser(username){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'getAllOneUser',
+            username:username
+        },
+        method:"post",
+        url:"operations.php",
+        success: function(response){
+            var responseData=response;
+            console.log(responseData);
+        }
+
     })
 }
