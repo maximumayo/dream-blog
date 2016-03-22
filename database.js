@@ -13,7 +13,7 @@ function updateBlog(title,article,users_id){
             users_id:users_id
         },
         method:'POST',
-        url:'edit.php',
+        url:'operations.php',
         success: function(response){
 
             console.log(response);
@@ -31,7 +31,7 @@ function deleteBlog(title,blogId){
             blogId:blogId
         },
         method:'POST',
-        url:'deleteBlog.php',
+        url:'operations.php',
         success:function(response){
             console.log(response);
         }
