@@ -1,6 +1,4 @@
-
-
-blog.config(function($stateProvider, $urlRouterProvider) {
+blog.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/landing');
 
     $stateProvider

@@ -1,10 +1,16 @@
-blog.controller("signupController", function ($scope) {
+blog.controller("signupController", function ($scope, signupService) {
     $scope.accountInfo = {};
-    var self = this;
+    var sc_self = this;
 
     $scope.createAccount = function () {
-        console.log('account info: ', $scope.accountInfo);
-        console.log('HEY HEY');
+        signupService.sendData(
+            $scope.accountInfo.firstName,
+            $scope.accountInfo.lastName,
+            $scope.accountInfo.email,
+            $scope.accountInfo.userName,
+            $scope.accountInfo.password,
+            $scope.accountInfo.phoneNumber
+        );
     };
 });
 
