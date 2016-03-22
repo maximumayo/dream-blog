@@ -1,6 +1,5 @@
-
-blog.service('getBlogService', function($http, $q){
-    this.getData = function(){
+blog.service('getBlogService', function ($http, $q) {
+    this.getData = function () {
         var gbs_self = this;
         var read = 'read';
         var data = $.param({operation: read});
@@ -14,15 +13,47 @@ blog.service('getBlogService', function($http, $q){
             }
         })
             .then(
-                function(response){
+                function (response) {
                     console.log('successful Resp: ', response);
                     defer.resolve(response);
                     //gbs_self.data = response;
                 },
-                function(response){
+                function (response) {
                     console.log('Error', response);
                     defer.reject('Fail');
                 });
-            return defer.promise;
+        return defer.promise;
+    }
+});
+
+
+blog.service('signupService', function ($http, $q) {
+    this.sendData = function (firstname, lastname, email, username, password, phone) {
+        var ss_self = this;
+        var newUser = 'newUser';
+        var data = $.param({
+            operation: newUser,
+            firstName: firstname,
+            lastName: lastname,
+            email: email,
+            username: username,
+            password: password,
+            phone: phone
+        });
+        $http({
+            url: 'operations.php',
+            method: 'post',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(
+                function (response) {
+                    console.log('successful Resp: ', response);
+                },
+                function (response) {
+                    console.log('Error', response);
+                });
     }
 });
