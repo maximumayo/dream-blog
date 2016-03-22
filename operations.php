@@ -16,6 +16,9 @@ else{
         case 'delete':
             include('deleteBlog.php');
             break;
+        case 'newUser':
+            include('newUser.php');
+            break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
 }
