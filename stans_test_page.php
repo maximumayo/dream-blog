@@ -24,7 +24,8 @@ $added = Date("Y-m-d H:i:s");
 <input id='title' placeholder="title goes here" /><br><br>
 <textarea id='article' rows='20' cols='50' placeholder="story goes here"></textarea><br><br>
 <button onclick="postNewBlogArticle('<?=$added?>', $('#article').val(), $('#title').val())">Submit</button>
-
+<br><br><br>
+<button onclick="getBlogListFromServer()">Get from Server</button>
 
 
 </body>
