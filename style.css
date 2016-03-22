@@ -1,5 +1,5 @@
 /************* news-feed css **************/
-.backColor{
+#bg{
     position: fixed;
     background-color: #336799;
     width: 100vw;

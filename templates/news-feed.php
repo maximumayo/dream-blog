@@ -9,7 +9,6 @@
 <!---->
 <!---->
 <!--</div>-->
-<div class="backColor">
     <div class='bgimg container-fluid'>
         <nav class="navbar" id='navbar'>
             <div class="container-fluid">
@@ -73,8 +72,6 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            <!-- <input placeholder='username'> -->
-                            <!-- <input placeholder='date'> -->
                             <input placeholder='title'> <br>
                             <textarea placeholder='Blog Post Content' rows='10' cols='50'></textarea>
                         </form>
@@ -87,4 +84,3 @@
             </div>
         </div>
     </div>
-</div>

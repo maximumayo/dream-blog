@@ -17,7 +17,7 @@
 
 
 </head>
-<body ng-app="blogApp">
+<body ng-app="blogApp" id="bg">
 
 <div ui-view></div>
 
