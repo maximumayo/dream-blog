@@ -3,8 +3,9 @@
     <h1>Fluffy Chainsaw Blog</h1>
     <input type="text" placeholder="email">
     <input type="password" placeholder="password">
-    <input type="submit" value="Log In">
-    <input type="submit" value="Sign Up">
+    <button class="btn btn-success" type="submit">Log In</button>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+
 
 
 </div>
