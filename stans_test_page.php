@@ -1,3 +1,7 @@
+<?php
+$added = Date("Y-m-d H:i:s");
+//echo $added;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +16,16 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="style.css">
-    <script src="database.js"></script>
+    <script src="stan.js"></script>
 
 
 </head>
 <body>
+<input id='title' placeholder="title goes here" /><br><br>
+<textarea id='article' rows='20' cols='50' placeholder="story goes here"></textarea><br><br>
+<button onclick="postNewBlogArticle('<?=$added?>', $('#article').val(), $('#title').val())">Submit</button>
+<br><br><br>
+<button onclick="getBlogListFromServer()">Get from Server</button>
 
 
 </body>
