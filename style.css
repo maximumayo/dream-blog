@@ -1,0 +1,57 @@
+/************* HOME PAGE CSS **************/
+/**
+* This css selector needs to change according to our theme and body tag
+*/
+#body{
+    position: absolute;
+    background-color: #336799;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bgimg{
+    background-image: url('images/dogboy2.png');
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
+    height: 50vh;
+    position: relative;
+}
+
+#navbar{
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand, .links{
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+.content{
+    width: 70vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.row{
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+
+.col-xs-4 {
+    text-align: right;
+    vertical-align: bottom;
+    line-height: 70px;
+    height: 3vh;
+}
+
+.col-xs-12 {
+    padding-bottom: 5%
+}
