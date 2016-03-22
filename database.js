@@ -36,6 +36,7 @@ function deleteBlog(title,blogId){
             console.log(response);
         }
     })
+<<<<<<< HEAD
 }
 
 function newUserCreate(firstname,lastname,email,username,password){
@@ -55,4 +56,6 @@ function newUserCreate(firstname,lastname,email,username,password){
             console.log(response);
         }
     })
+=======
+>>>>>>> 5ee07b1839d0a89e0b13b0c046c290ff5f0690ef
 }
