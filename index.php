@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body ng-app="blogApp">
 
 
 
