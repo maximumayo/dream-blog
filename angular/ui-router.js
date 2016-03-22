@@ -1,7 +1,4 @@
-/**
- * Created by Timmy on 3/21/2016.
- */
-var blog = angular.module('blogApp', ['ui.router']);
+
 
 blog.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/landing');
@@ -10,22 +7,22 @@ blog.config(function($stateProvider, $urlRouterProvider) {
 
         .state('landing', {
             url: '/landing',
-            templateUrl: 'landing-page.php'
+            templateUrl: 'templates/landing-page.php'
         })
 
         .state('registration', {
             url: '/registration',
-            templateUrl: 'registration-page.php'
+            templateUrl: 'templates/registration-page.php'
         })
 
         .state('newsfeed', {
             url: '/newsfeed',
-            templateUrl: 'news-feed.php'
+            templateUrl: 'templates/news-feed.php'
         })
 
         .state('profile', {
             url: '/profile',
-            templateUrl: 'profile-page.php'
+            templateUrl: 'templates/profile-page.php'
         })
 
 });
