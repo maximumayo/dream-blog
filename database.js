@@ -7,7 +7,7 @@ function updateBlog(title,article,users_id){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'update',
+            operation:'editBlog',
             title:title,
             article:article,
             users_id:users_id
@@ -26,7 +26,7 @@ function deleteBlog(title,blogId){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'delete',
+            operation:'deleteBlog',
             title:title,
             blogId:blogId
         },

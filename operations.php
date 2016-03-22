@@ -11,10 +11,10 @@ else{
 // There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
 
     switch ($operation) {
-        case 'update': // Update Blog
-            include('operations/edit.php');
+        case 'editBlog': // Update Blog
+            include('operations/editBlog.php');
             break;
-        case 'delete': // Delete Blog
+        case 'deleteBlog': // Delete Blog
             include('operations/deleteBlog.php');
             break;
         case 'newUser': // Creating a new user: This will be moved
