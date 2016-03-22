@@ -1,5 +1,5 @@
 <?php
-    require_once ('mysql_connect.php');
+    require_once('mysql_connect.php');
     $givenName = $_POST['firstName'];
     $familyName = $_POST['lastName'];
     $email = $_POST['email'];
