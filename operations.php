@@ -11,10 +11,13 @@ else{
 
     switch ($operation) {
         case 'update':
-            include('edit.php');
+            include('operations/edit.php');
             break;
         case 'delete':
-            include('deleteBlog.php');
+            include('operations/deleteBlog.php');
+            break;
+        case 'newUser':
+            include('operations/newUser.php');
             break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
