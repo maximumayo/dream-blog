@@ -1,9 +1,6 @@
-/************* HOME PAGE CSS **************/
-/**
-* This css selector needs to change according to our theme and body tag
-*/
-#body{
-    position: absolute;
+/************* news-feed css **************/
+.backColor{
+    position: fixed;
     background-color: #336799;
     width: 100vw;
     height: 100vh;

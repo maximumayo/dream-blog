@@ -1,9 +1,9 @@
 function getBlogListFromServer(){
     $.ajax({
         dataType:'json',
-        // data:{
-        //    api_key:'1111111111'
-        //},
+        data:{
+           operation:'read'
+        },
         method:'POST',
         url:'get.php',
         success: function(response){
@@ -19,7 +19,7 @@ function postNewBlogArticle(added,article,title){
     $.ajax({
         dataType:'json',
         data:{
-            //api_key:'1111111111',
+            operation:'create',
             added:added,
             article:article,
             title:title,
@@ -30,14 +30,25 @@ function postNewBlogArticle(added,article,title){
         success: function(response){
             var responseData=response;
             console.log(responseData);
-            // if (response.success){
-            //     console.log(response);
-            //     addClicked(response.id);
-            // }else if (!response.success){
-            //     console.log(response);
-            //     alert(response.errors[0]);
-            // }
+
 
         }
+    })
+}
+
+function getAllArticlesOneUser(username){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'getAllOneUser',
+            username:username
+        },
+        method:"post",
+        url:"getAllOneUser.php",
+        success: function(response){
+            var responseData=response;
+            console.log(responseData);
+        }
+        
     })
 }
