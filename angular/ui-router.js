@@ -1,6 +1,4 @@
-
-
-blog.config(function($stateProvider, $urlRouterProvider) {
+blog.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/landing');
 
     $stateProvider
@@ -12,7 +10,8 @@ blog.config(function($stateProvider, $urlRouterProvider) {
 
         .state('registration', {
             url: '/registration',
-            templateUrl: 'templates/registration-page.php'
+            templateUrl: 'templates/registration-page.php',
+            controller: 'signupController'
         })
 
         .state('newsfeed', {
