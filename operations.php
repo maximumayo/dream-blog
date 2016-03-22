@@ -8,16 +8,26 @@ else{
     $operation = 'none';
 }
 
+// There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
 
     switch ($operation) {
-        case 'update':
+        case 'update': // Update Blog
             include('operations/edit.php');
             break;
-        case 'delete':
+        case 'delete': // Delete Blog
             include('operations/deleteBlog.php');
             break;
-        case 'newUser':
+        case 'newUser': // Creating a new user: This will be moved
             include('operations/newUser.php');
+            break;
+        case 'read': // Get all Blogs
+            include('operations/get.php');
+            break;
+        case 'getAllOneUser': // Get all Blogs for one user
+            include('operations/getAllOneUser.php');
+            break;
+        case 'create': // This creates a new blog
+            include('operations/create.php');
             break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
