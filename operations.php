@@ -29,6 +29,8 @@ else{
         case 'create': // This creates a new blog
             include('operations/create.php');
             break;
+        case 'deleteUser':
+            include('operations/deleteUser.php');
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
 }
