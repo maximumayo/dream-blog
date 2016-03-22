@@ -12,11 +12,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="style.css">
+    <script src="ui-router.js"></script>
 
 
 </head>
 <body ng-app="blogApp">
 
+<div ui-view></div>
 
 
 </body>
