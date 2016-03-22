@@ -16,8 +16,24 @@ function updateBlog(title,article,users_id){
         url:'edit.php',
         success: function(response){
 
-            console.log("success");
+            console.log(response);
 
+        }
+    })
+}
+
+function deleteBlog(title,blogId){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'delete',
+            title:title,
+            blogId:blogId
+        },
+        method:'POST',
+        url:'deleteBlog.php',
+        success:function(response){
+            console.log(response);
         }
     })
 }
