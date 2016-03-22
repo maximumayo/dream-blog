@@ -5,6 +5,10 @@
     <title>Fluffy Chainsaw Blog</title>
     <!--jquery-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--bootstrap jquery-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
     <!--bootstrap-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!--angular-->
@@ -18,7 +22,9 @@
 
 
 </head>
-<body ng-app="blogApp">
+
+<body ng-app="blogApp" id="bg">
+
 <div ui-view></div>
 
 <!--angular script files-->
