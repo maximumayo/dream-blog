@@ -13,6 +13,7 @@
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="style.css">
     <script src="ui-router.js"></script>
+    <script src="database.js"></script>
 
 
 </head>

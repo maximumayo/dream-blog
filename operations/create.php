@@ -1,5 +1,5 @@
 <?php
-require("mysql_connect.php");
+//require("mysql_connect.php");
 $article = $_POST['article'];
 $added = $_POST['added'];
 $title = $_POST['title'];

@@ -1,5 +1,5 @@
 <?php
-    require("mysql_connect.php");
+//    require("mysql_connect.php");
     $query = "SELECT users.username, posts.title, posts.article, posts.added FROM posts JOIN users ON users.id = posts.users_id order by posts.added desc";
     $result = mysqli_query($conn, $query);
     $output = ['success' => false];
