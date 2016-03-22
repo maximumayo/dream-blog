@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="style.css">
+    <script src="database.js"></script>
 
 
 </head>

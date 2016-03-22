@@ -3,20 +3,20 @@
  */
 
 
-function updateBlog(title,article,user_id){
+function updateBlog(title,article,users_id){
     $.ajax({
         dataType:'json',
         data:{
             operation:'update',
             title:title,
             article:article,
-            user_id:user_id
+            users_id:users_id
         },
         method:'POST',
-        url:'index.php',
+        url:'edit.php',
         success: function(response){
 
-
+            console.log("success");
 
         }
     })
