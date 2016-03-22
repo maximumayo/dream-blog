@@ -1,6 +1,6 @@
 <?php
 //require("mysql_connect.php");
-$username = $_POST['username'];
+$username = trim(filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING));
 $query = "select users.username, posts.added, posts.article, posts.title from posts join users on posts.users_id = users.id where users.username = '$username' order by added desc";
 $result = mysqli_query($conn, $query);
 $output = ['success' => false];
