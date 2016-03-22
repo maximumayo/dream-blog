@@ -1,14 +1,31 @@
 <?php
     require("mysql_connect.php");
-    $test = "hello Korey Lo my name it's lo what i'm am crazy's ha'ha";
-    $testy = mysqli_real_escape_string($conn,$test);
-//    $_POST['username'];
-//    $_POST['title'];
-    $query = "UPDATE `posts` SET `article` = '$testy' WHERE `users_id` = 1 AND `title` = 'my day'";
-    $result = mysqli_query($conn,$query);
-    if(mysqli_affected_rows($conn) > 0){
-        echo "It Works";
+//    $test = "hello Korey Lo my name it's lo what i'm am crazy's ha'ha";
+//    $testy = mysqli_real_escape_string($conn,$test);
+//    $username = $_POST['username'];
+    $blogTitle = $_POST['title'];
+    $blogContent = $_POST['article'];
+    $blogContentE = mysqli_real_escape_string($conn,$blogContent);
+    $blogId = $_POST['user_id'];
+
+    $query = "UPDATE `posts` SET `article` = '$blogContentE' WHERE `users_id` = '$blogId' AND `title` = '$blogTitle'";
+
+
+    if(!empty($_POST['operation'])){
+        $operation = $_POST['operation'];
     }
     else{
-        echo "It didn't work";
+        $operation = 'none';
     }
+
+    switch ($operation) {
+        case 'update':
+            break;
+        default:
+    }
+
+
+
+
+
+
