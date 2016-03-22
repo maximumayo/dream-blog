@@ -1,0 +1,18 @@
+<?php
+require("mysql_connect.php");
+$article = $_POST['article'];
+$added = $_POST['added'];
+$title = $_POST['title'];
+$user_id = 1;
+$query = "insert into `posts` set `added`='$added', `article`='$article', `title`='$title', `users_id`='$user_id'";
+$result = mysqli_query($conn, $query);
+$data = ['success' => false];
+mysqli_query($conn,$query);
+if(mysqli_affected_rows($conn)){
+    $data = ['success' => true, 'id' => mysqli_insert_id($conn)];
+}
+$data = json_encode($data);
+print_r($data);
+exit();
+
+?>
