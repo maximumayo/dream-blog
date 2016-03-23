@@ -1,6 +1,6 @@
 <?php
 //    require("mysql_connect.php");
-    $query = "SELECT users.username, posts.title, post_content.article, posts.added, image.url
+    $query = "SELECT users.username, posts.id, posts.title, post_content.article, posts.added, image.url
               FROM posts
               JOIN users
                 ON users.id = posts.users_id
