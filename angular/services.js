@@ -152,3 +152,20 @@ blog.service('deleteBlogPostService', function($http){
            });
    }
 });
+
+
+/**
+ * Update/Edit a blog post from the dom and from the database
+ *
+ * This needs a blog ID to be passed into it!!!!!
+ */
+
+blog.service('editBlogPostService', function($http){
+   this.editPost = function() {
+       var editBlogOp = 'editBlog';
+       var data = $.param({
+           operation: editBlogOp,
+
+       });
+   }
+});
