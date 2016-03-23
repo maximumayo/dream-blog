@@ -35,32 +35,40 @@
 
 
     <div class="row">
-        <div class="col-md-3">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createBlogModal">New
-                Post
-            </button>
-        </div>
+            <div class="col-md-3 left-panel">
+                <div class="profile-image">
+                    <img  class="img-responsive img-circle" src="https://media.licdn.com/media/p/7/005/08b/373/15cb74b.jpg">
+                </div>
+
+                <div class="new-post">
+                    <button type="button" class="btn btn-primary btn-lg align-center" data-toggle="modal"
+                            data-target="#createBlogModal">New
+                        Post
+                    </button>
+                </div>
+            </div>
 
 
-        <div class="col-md-9 pull-right" >
-            <div class="row">
-                <div class="col-md-6" ng-repeat='post in ppc.blogList'>
-                    <div class="row">
-                        <div class="col-xs-11">
-
-                            <div class=' row blogPart'>
-                                <h3>{{post.title}}</h3>
-                                <span>{{' Author: ' + post.username+ " - "}}</span>
-                                <span>{{post.added}}</span>
-                                <p>{{post.article}}</p>
-                                <div>
-                                    <button class="btn btn-danger">Delete</button>
+            <div class="col-md-9 pull-right" >
+                <div class="row">
+                    <div class="col-md-6" ng-repeat='post in ppc.blogList'>
+                        <div class="row">
+                            <div class="col-xs-11 blogPart">
+                                <div class='row'>
+                                    <div class="col-xs-12">
+                                        <h3>{{post.title}}</h3>
+                                        <span>{{' Author: ' + post.username+ " - "}}</span>
+                                        <span>{{post.added}}</span>
+                                        <p>{{post.article}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-danger pull-right">Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class='col-xs-4 blogPart'>{{'By: ' + post.username}}</div> -->
-                    </div>
-
                     </div>
                 </div>
             </div>
