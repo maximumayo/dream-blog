@@ -15,12 +15,11 @@ function getBlogListFromServer(){
     })
 }
 
-function postNewBlogArticle(added,article,title){
+function postNewBlogArticle(article,title){
     $.ajax({
         dataType:'json',
         data:{
             operation:'create',
-            added:added,
             article:article,
             title:title,
             users_id:1
@@ -53,13 +52,12 @@ function getAllArticlesOneUser(username){
     })
 }
 
-function deleteUser(username,password){
+function deleteUser(username){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'delete',
-            username:username,
-            password:password
+            operation:'deleteUser',
+            user_id:username,
         },
         method:"post",
         url:"operations.php",

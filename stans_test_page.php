@@ -23,13 +23,21 @@ $added = Date("Y-m-d H:i:s");
 <body>
 <input id='title' placeholder="title goes here" /><br><br>
 <textarea id='article' rows='20' cols='50' placeholder="story goes here"></textarea><br><br>
-<button onclick="postNewBlogArticle('<?=$added?>', $('#article').val(), $('#title').val())">Submit</button>
+<button onclick="postNewBlogArticle($('#article').val(), $('#title').val())">Submit</button>
 <br><br><br>
 <button onclick="getBlogListFromServer()">Get from Server</button>
 <br><br><br>
-<input id="username" placeholder="username goes here"/> <br><br>
-<input id="password" placeholder="password goes here"/> <br><br>
+<!--<input id="username" placeholder="username goes here"/> <br><br>-->
+<!--<input id="password" placeholder="password goes here"/> <br><br>-->
+<input id="user_id" placeholder="user_id"/><br><br>
 <button onclick="getAllArticlesOneUser($('#username').val())">Get all one user</button>
-<button onclick="deleteUser($('#username').val(), $('#password').val())">Delete User</button>
+<button onclick="deleteUser($('#user_id').val(), $('#password').val())">Delete User</button>
+<br><br><br>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 </body>
 </html>

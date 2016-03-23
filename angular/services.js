@@ -33,7 +33,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         //var read = 'read';
         var data = $.param({
             operation: 'getAllOneUser',
-            username: 'stanw'
+            userId: 4
         });
         var defer = $q.defer();
         $http({
@@ -87,5 +87,36 @@ blog.service('signupService', function ($http, $q) {
                 function (response) {
                     console.log('Error', response);
                 });
+    }
+});
+
+/**
+ * Creates A New Blog Post and Sends it to the Database
+ * */
+blog.service('createNewBlogService', function($http){
+    this.createBlogPost = function(article, title){
+        //var cbs_self = this;
+        var create = 'create';
+        var data = $.param({
+            operation: create,
+            article: article,
+            title: title,
+            /** TO DO: the user_id will have to change according to the user posting**/
+            user_id: 2
+        });
+        $http({
+           url: 'operations.php',
+           method: 'post',
+           data: data,
+           headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+           }
+        })
+            .then(function (response){
+                console.log('create post success response: ', response);
+            },
+            function (response){
+                console.log('Error', response);
+        });
     }
 });
