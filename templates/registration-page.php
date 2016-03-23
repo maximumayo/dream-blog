@@ -2,7 +2,7 @@
     <!--    ng-controller="signupController as sc"-->
 
     <h1>Create An Account</h1>
-    <input type="text" placeholder="UserName" ng-model="accountInfo.userName"> <br>
+    <input type="text" placeholder="UserName" ng-model="accountInfo.userName" required> <br>
     <input type="text" placeholder="First Name" ng-model="accountInfo.firstName"> <br>
     <input type="text" placeholder="Last Name" ng-model="accountInfo.lastName"> <br>
     <input type="password" placeholder="Password" ng-model="accountInfo.password"> <br>
