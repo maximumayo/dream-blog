@@ -28,10 +28,6 @@
 
 <!--TODO: Make sure this is an active controller-->
 <div class="blogPosts" ng-controller="newsFeedController as nfc">
-    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#createBlogModal">
-        New Post
-    </button>
-
     <div class='content container-fluid'>
         <div class='row' ng-repeat='post in nfc.blogList'>
             <div class='col-xs-8 blogPart'><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
@@ -56,7 +52,7 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <input placeholder='Blog Title'> <br>
+                        <input placeholder='Blog Title' ng-model=""> <br>
                         <textarea placeholder='Blog Post Content' rows='10' cols='50'></textarea>
                     </form>
                 </div>
