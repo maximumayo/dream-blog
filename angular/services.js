@@ -95,7 +95,6 @@ blog.service('signupService', function ($http, $q) {
  * */
 blog.service('createNewBlogService', function($http){
     this.createBlogPost = function(article, title){
-
         //var cbs_self = this;
         var create = 'create';
         var data = $.param({
