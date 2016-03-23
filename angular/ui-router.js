@@ -1,6 +1,4 @@
-
-
-blog.config(function($stateProvider, $urlRouterProvider) {
+blog.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/landing');
 
     $stateProvider
@@ -12,17 +10,20 @@ blog.config(function($stateProvider, $urlRouterProvider) {
 
         .state('registration', {
             url: '/registration',
-            templateUrl: 'templates/registration-page.php'
+            templateUrl: 'templates/registration-page.php',
+            controller: 'signupController'
         })
 
         .state('newsfeed', {
             url: '/newsfeed',
-            templateUrl: 'templates/news-feed.php'
+            templateUrl: 'templates/news-feed.php',
+            controller: 'newsFeedController'
         })
 
         .state('profile', {
             url: '/profile',
-            templateUrl: 'templates/profile-page.php'
+            templateUrl: 'templates/profile-page.php',
+            controller: 'profilePageController'
         })
 
 });
