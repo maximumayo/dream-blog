@@ -2,7 +2,10 @@
  * Created by koreylo on 3/21/16.
  */
 
-
+//Parameters
+// blog_id : The unique id of each individual blog, this will be given when user creates a blog
+// article: the content that user wants to add or change for their blog
+// users_id: the unique id of that user, this will be given when a new user is created
 function updateBlog(blog_id,article,users_id){
     $.ajax({
         dataType:'json',
@@ -96,12 +99,12 @@ function postNewBlogArticle(added,article,title){
     })
 }
 
-function getAllArticlesOneUser(username){
+function getAllArticlesOneUser(userId){
     $.ajax({
         dataType:'json',
         data:{
             operation:'getAllOneUser',
-            username:username
+            userId:userId
         },
         method:"post",
         url:"operations.php",

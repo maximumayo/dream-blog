@@ -18,7 +18,7 @@
         $output = ['success' => 'true'];
     }
     else{
-        $output = ['success' => 'false', 'errors' => 'invalid'];
+        $output = ['success' => 'false', 'errors' => 'invalid']; // need to change the error message based on what really caused the error
     }
 
 
