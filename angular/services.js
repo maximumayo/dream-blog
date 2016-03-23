@@ -133,8 +133,11 @@ blog.service('deleteBlogPostService', function($http){
        var deleteBlog = 'deleteBlog';
        var data = $.param({
           operation: deleteBlog,
-          users_id: users_id,
-          blogId: blog_id
+          //users_id: 4,
+          //blog_id: 23
+          blog_id: blog_id,
+          users_id: users_id
+
        });
        $http({
            url: 'operations.php',
