@@ -64,7 +64,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-danger pull-right">Delete</button>
+                                    <button class="btn btn-danger pull-right" ng-click="ppc.deletePost()">Delete</button>
                                 </div>
                             </div>
                         </div>
