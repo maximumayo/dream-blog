@@ -132,7 +132,7 @@ function deleteUser(username,password){
         dataType:'json',
         data:{
             operation:'deleteUser',
-            username:username,
+            user_id:username,
             password:password
         },
         method:"post",

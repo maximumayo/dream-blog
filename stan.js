@@ -52,13 +52,12 @@ function getAllArticlesOneUser(username){
     })
 }
 
-function deleteUser(username,password){
+function deleteUser(username){
     $.ajax({
         dataType:'json',
         data:{
-            operation:'delete',
-            username:username,
-            password:password
+            operation:'deleteUser',
+            user_id:username,
         },
         method:"post",
         url:"operations.php",
