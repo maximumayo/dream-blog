@@ -21,7 +21,7 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li><a ui-sref="profile" class='links'>My Profile</a></li>
-                    <li><a class='links navbar-left'>Log Out</a></li>
+                    <li><a ui-sref="landing" class='links navbar-left'>Log Out</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
