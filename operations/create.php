@@ -1,6 +1,7 @@
 <?php
 //require("mysql_connect.php");
 $article = trim(filter_input(INPUT_POST,'article',FILTER_SANITIZE_STRING));
+//$article = mysqli_real_escape_string($_POST['article']);
 $added = Date("Y-m-d H:i:s");
 $title = trim(filter_input(INPUT_POST,'title',FILTER_SANITIZE_STRING));
 $user_id = trim(filter_input(INPUT_POST,'user_id',FILTER_SANITIZE_NUMBER_INT));
