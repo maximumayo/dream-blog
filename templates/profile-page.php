@@ -29,7 +29,6 @@
 </div>
 
 
-<!--TODO: Make sure this is an active controller-->
 <div id="profile-page" class="blogPosts container" ng-controller="profilePageController as ppc">
 
 
@@ -65,7 +64,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-danger pull-right">Delete</button>
+                                    <button class="btn btn-danger pull-right" ng-click="ppc.deletePost()">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +102,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 
 
