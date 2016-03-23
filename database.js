@@ -3,18 +3,18 @@
  */
 
 
-function updateBlog(title,article,users_id){
+function updateBlog(title, article, users_id) {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'editBlog',
-            title:title,
-            article:article,
-            users_id:users_id
+        dataType: 'json',
+        data: {
+            operation: 'editBlog',
+            title: title,
+            article: article,
+            users_id: users_id
         },
-        method:'POST',
-        url:'operations.php',
-        success: function(response){
+        method: 'POST',
+        url: 'operations.php',
+        success: function (response) {
 
             console.log(response);
 
@@ -22,51 +22,52 @@ function updateBlog(title,article,users_id){
     })
 }
 
-function deleteBlog(title,blogId){
+function deleteBlog(title, blogId) {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'deleteBlog',
-            title:title,
-            blogId:blogId
+        dataType: 'json',
+        data: {
+            operation: 'deleteBlog',
+            title: title,
+            blogId: blogId
         },
-        method:'POST',
-        url:'operations.php',
-        success:function(response){
+        method: 'POST',
+        url: 'operations.php',
+        success: function (response) {
             console.log(response);
         }
     })
 
 }
 
-function newUserCreate(firstname,lastname,email,username,password){
+function newUserCreate(firstname, lastname, email, username, password, phone) {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'newUser',
-            firstName:firstname,
-            lastName:lastname,
-            email:email,
-            username:username,
-            password:password
+        dataType: 'json',
+        data: {
+            operation: 'newUser',
+            firstName: firstname,
+            lastName: lastname,
+            email: email,
+            username: username,
+            password: password,
+            phone: phone
         },
-        method:'POST',
-        url:'operations.php',
-        success:function(response){
+        method: 'POST',
+        url: 'operations.php',
+        success: function (response) {
             console.log(response);
         }
     })
 }
 
-function getBlogListFromServer(){
+function getBlogListFromServer() {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'read'
+        dataType: 'json',
+        data: {
+            operation: 'read'
         },
-        method:'POST',
-        url:'operations.php',
-        success: function(response){
+        method: 'POST',
+        url: 'operations.php',
+        success: function (response) {
             var responseData = response.data;
             console.log(response);
 
@@ -75,20 +76,20 @@ function getBlogListFromServer(){
     })
 }
 
-function postNewBlogArticle(added,article,title){
+function postNewBlogArticle(added, article, title) {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'create',
-            added:added,
-            article:article,
-            title:title,
-            users_id:1
+        dataType: 'json',
+        data: {
+            operation: 'create',
+            added: added,
+            article: article,
+            title: title,
+            users_id: 1
         },
-        method:"POST",
-        url:"operations.php",
-        success: function(response){
-            var responseData=response;
+        method: "POST",
+        url: "operations.php",
+        success: function (response) {
+            var responseData = response;
             console.log(responseData);
 
 
@@ -96,17 +97,17 @@ function postNewBlogArticle(added,article,title){
     })
 }
 
-function getAllArticlesOneUser(username){
+function getAllArticlesOneUser(username) {
     $.ajax({
-        dataType:'json',
-        data:{
-            operation:'getAllOneUser',
-            username:username
+        dataType: 'json',
+        data: {
+            operation: 'getAllOneUser',
+            username: username
         },
-        method:"post",
-        url:"operations.php",
-        success: function(response){
-            var responseData=response;
+        method: "post",
+        url: "operations.php",
+        success: function (response) {
+            var responseData = response;
             console.log(responseData);
         }
 

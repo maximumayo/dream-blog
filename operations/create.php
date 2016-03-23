@@ -1,8 +1,8 @@
 <?php
 //require("mysql_connect.php");
-$article = $_POST['article'];
-$added = $_POST['added'];
-$title = $_POST['title'];
+$article = trim(filter_input(INPUT_POST,'article',FILTER_SANITIZE_STRING));
+$added = trim(filter_input(INPUT_POST,'added',FILTER_SANITIZE_STRING));
+$title = trim(filter_input(INPUT_POST,'title',FILTER_SANITIZE_STRING));
 $user_id = 1;
 $query = "insert into `posts` set `added`='$added', `article`='$article', `title`='$title', `users_id`='$user_id'";
 $output = ['success' => false];
