@@ -95,14 +95,10 @@ blog.service('signupService', function ($http, $q) {
  * */
 blog.service('createNewBlogService', function($http){
     this.createBlogPost = function(article, title){
-        /** TO DO: The date is not working as of 03/22/16 **/
-        var date = Date.now();
-        console.log('date at this moment: ', date);
         //var cbs_self = this;
         var create = 'create';
         var data = $.param({
             operation: create,
-            added: date,
             article: article,
             title: title,
             /** TO DO: the user_id will have to change according to the user posting**/
