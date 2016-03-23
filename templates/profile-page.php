@@ -75,7 +75,7 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            <input placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
+                            <input type='text' placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
                             <textarea placeholder='Blog Post Content' rows='10' cols='50' ng-model="ppc.blogPost.article"></textarea>
                         </form>
                     </div>
