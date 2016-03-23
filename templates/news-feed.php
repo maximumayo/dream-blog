@@ -1,4 +1,4 @@
-<div class='bgimg container-fluid'>
+<div class='container-fluid'>
     <nav class="navbar" id='navbar'>
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
