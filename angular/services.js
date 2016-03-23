@@ -90,6 +90,9 @@ blog.service('signupService', function ($http, $q) {
     }
 });
 
+/**
+ * Creates A New Blog Post and Sends it to the Database
+ * */
 blog.service('createNewBlogService', function($http){
     this.createBlogPost = function(article, title){
         /** TO DO: The date is not working as of 03/22/16 **/
