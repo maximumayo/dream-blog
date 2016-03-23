@@ -67,3 +67,20 @@ function deleteUser(username){
         }
     })
 }
+
+function login(username, password) {
+    $.ajax({
+        dataType: 'json',
+        data: {
+            operation: 'login',
+            username: username,
+            password: password
+        },
+        method: "post",
+        url: "operations.php",
+        success: function (response) {
+            var responseData = response;
+            console.log(responseData);
+        }
+    })
+}

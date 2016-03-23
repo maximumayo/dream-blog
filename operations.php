@@ -11,6 +11,9 @@ if (!empty($_POST['operation'])) {
 
 
     switch ($operation) {
+        case 'login':
+            include('operations/login.php');
+            break;
         case 'editBlog': // Update Blog
             include('operations/editBlog.php');
             break;
