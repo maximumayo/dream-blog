@@ -1,15 +1,16 @@
 /************* news-feed css **************/
 #bg{
-    background-color: #336799;
+    background-image: url('images/sky.jpg')
+    /*background-color: #336799;*/
 }
 
-.bgimg{
-    background-image: url('images/dogboy2.png');
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
-    height: 50vh;
-    position: relative;
-}
+/*.bgimg{*/
+    /*background-image: url('images/dogboy2.png');*/
+    /*background-size: cover;*/
+    /*!*background-repeat: no-repeat;*!*/
+    /*height: 50vh;*/
+    /*position: relative;*/
+/*}*/
 
 #navbar{
     margin-bottom: 0;
