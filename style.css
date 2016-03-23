@@ -69,3 +69,17 @@ h1{
     font-size: 25px;
     margin-bottom: 3%;
 }
+
+/*profile page*/
+
+#profile-page .row {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+}
+
+#profile-page .blogPart {
+    background-color: #EEE;
+    overflow: hidden;
+    height: 200px;
+}
