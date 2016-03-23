@@ -128,24 +128,24 @@ blog.service('createNewBlogService', function($http){
  * This needs a blog ID to be passed into it!!!!!
  */
 blog.service('deleteBlogPostService', function($http){
-   this.deletePost = function(title, blogId){
+   this.deletePost = function(users_id, blog_id){
        var deleteBlog = 'deleteBlog';
        var data = $.param({
           operation: deleteBlog,
-          title: title,
-          blogId: blogId
+          users_id: users_id,
+          blogId: blog_id
        });
        $http({
            url: 'operations.php',
-           method: 'post',
+           method: 'POST',
            data: data,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
 
-       })
-           .then(function(response){
-            console.log('delete post function: ',response);
+       }).then(
+           function(response){
+               console.log('delete post function: ',response);
        },
            function(response){
                console.log('You are not authorized to delete this post', response);
@@ -161,11 +161,27 @@ blog.service('deleteBlogPostService', function($http){
  */
 
 blog.service('editBlogPostService', function($http){
-   this.editPost = function() {
+   this.editPost = function(blog_id, article, user_id) {
        var editBlogOp = 'editBlog';
        var data = $.param({
            operation: editBlogOp,
-
+           blog_id: blog_id,
+           user_id: user_id,
+           article: article
        });
+       $http({
+           url: 'operations.php',
+           method: 'POST',
+           data: data,
+           headers: {
+               'Content-Type': 'application/x-www-form-urlencoded'
+           }
+       }).then(
+           function(response){
+               console.log('update post function:', response);
+           },
+           function(response){
+               console.log('Unable to update post', response);
+           });
    }
 });
