@@ -25,13 +25,17 @@ function updateBlog(blog_id,article,users_id){
     })
 }
 
-function deleteBlog(title,blogId){
+// parameters
+// users_id: unique id from that user
+// blog_id : unique id to the blog
+
+function deleteBlog(usersId,blog_id){
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteBlog',
-            title:title,
-            blogId:blogId
+            users_id:usersId,
+            blog_id:blog_id
         },
         method:'POST',
         url:'operations.php',
