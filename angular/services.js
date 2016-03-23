@@ -129,12 +129,13 @@ blog.service('createNewBlogService', function($http){
  * This needs a blog ID to be passed into it!!!!!
  */
 blog.service('deleteBlogPostService', function($http){
-   this.deletePost = function(title, blogId){
+   this.deletePost = function(users_id, blog_id){
        var deleteBlog = 'deleteBlog';
        var data = $.param({
           operation: deleteBlog,
-          title: title,
-          blogId: blogId
+          users_id: 4,
+          //blog_id: 23
+           blog_id: blog_id
        });
        $http({
            url: 'operations.php',
