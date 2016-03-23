@@ -17,9 +17,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <!--css-->
     <link rel="stylesheet" href="style.css">
-    <script src="database.js"></script>
 
     <script src="database.js"></script>
+
 
 
 </head>
