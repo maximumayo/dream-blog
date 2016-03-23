@@ -3,7 +3,7 @@
 
     <h1>Create An Account</h1>
 
-    <form name="create">
+    <form name="myForm">
 
         <input type="text" placeholder="User Name" ng-model="accountInfo.userName" pattern="[a-zA-Z0-9]{3,12}" required>
         <br>
@@ -27,10 +27,10 @@
 
         <input type="text" placeholder="Phone Number" ng-model="accountInfo.phoneNumber"
                pattern="1?\(?[0-9]{3}\)?-? *[0-9]{3}-? *[0-9]{4}\b" required> <br>
-
-        <input type="submit" ng-click="createAccount() ui-sref=" landing" class="btn btn-success" value="Create
-        Account">
-
+        <span>
+            <input ng-hide="myForm.$valid" type="submit" class="btn btn-danger" value="Create Account">
+            <input ng-show="myForm.$valid" type="submit" ng-click="createAccount()" ui-sref="landing" class="btn btn-success" value="Create Account">
+        </span>
 
     </form>
 

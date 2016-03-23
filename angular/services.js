@@ -82,7 +82,7 @@ blog.service('signupService', function ($http, $q) {
         })
             .then(
                 function (response) {
-                    console.log('successful Resp: ', response);
+                    console.log('Successfully sent form to server: ', response);
                 },
                 function (response) {
                     console.log('Error', response);

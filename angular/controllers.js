@@ -1,5 +1,7 @@
 blog.controller("signupController", function ($scope, signupService) {
-    $scope.accountInfo = {};
+    $scope.accountInfo = {
+        //userName: "shimoshixp", firstName: "Timmy", lastName: "Nguyen", password: "aergAERG1234", passwordConfirm: "aergAERG1234", email: "shimoshixp@gmail.com", phoneNumber: "123-123-1234"
+    };
     var sc_self = this;
     $scope.createAccount = function () {
         signupService.sendData(
