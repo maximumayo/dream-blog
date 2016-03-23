@@ -1,13 +1,18 @@
 <?php
 require_once('mysql_connect.php');
 
-if (!empty($_POST['operation'])) {
-    $operation = $_POST['operation'];
-} else {
-    $operation = 'none';
-}
+
 
 // There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
+
+if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']) {
+
+    if (!empty($_POST['operation'])) {
+        $operation = $_POST['operation'];
+    } else {
+        $operation = 'none';
+    }
+
 
     switch ($operation) {
         case 'editBlog': // Update Blog
@@ -31,9 +36,16 @@ if (!empty($_POST['operation'])) {
         case 'deleteUser':
             include('operations/deleteUser.php');
             break;
+        case 'signout':
+            include('operations/signout.php');
+            break;
         default:
-            $output = ['success' => 'false', 'errors' => ['invalid operation']];
+            $output = ['success' => false, 'errors' => ['invalid operation']];
     }
+}
+else{
+    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
+}
 
 print(json_encode($output));
 ?>

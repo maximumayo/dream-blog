@@ -9,7 +9,7 @@ $query = "insert into `posts` set `added`='$added', `title`='$title', `users_id`
 $output = ['success' => false];
 $result = mysqli_query($conn,$query);
 if(mysqli_affected_rows($conn)>0){
-    $output = ['success' => true, 'id' => mysqli_insert_id($conn)];
+    $output = ['success' => true, 'blogId' => mysqli_insert_id($conn)];
 }
 $last_insert= mysqli_insert_id($conn);
 $post_content_query = "insert into `post_content` set post_content.article = '$article', post_content.post_id = '$last_insert'" ;

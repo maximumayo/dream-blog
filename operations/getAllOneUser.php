@@ -7,7 +7,6 @@ $query = "SELECT users.username, posts.title, post_content.article, posts.added
                 ON users.id = posts.users_id
             JOIN post_content
                 ON post_content.post_id = posts.id
-
             WHERE users.id = $userId";
 $result = mysqli_query($conn, $query);
 $output = ['success' => false];
