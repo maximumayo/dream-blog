@@ -89,3 +89,38 @@ blog.service('signupService', function ($http, $q) {
                 });
     }
 });
+
+/**
+ * Creates A New Blog Post and Sends it to the Database
+ * */
+blog.service('createNewBlogService', function($http){
+    this.createBlogPost = function(article, title){
+        /** TO DO: The date is not working as of 03/22/16 **/
+        var date = Date.now();
+        console.log('date at this moment: ', date);
+        //var cbs_self = this;
+        var create = 'create';
+        var data = $.param({
+            operation: create,
+            added: date,
+            article: article,
+            title: title,
+            /** TO DO: the user_id will have to change according to the user posting**/
+            user_id: 2
+        });
+        $http({
+           url: 'operations.php',
+           method: 'post',
+           data: data,
+           headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+           }
+        })
+            .then(function (response){
+                console.log('create post success response: ', response);
+            },
+            function (response){
+                console.log('Error', response);
+        });
+    }
+});
