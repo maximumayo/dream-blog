@@ -31,9 +31,10 @@ blog.controller('newsFeedController', function(getBlogService){
 
 
 /** Controller for getting all blog posts for the user profile page **/
-.controller('profilePageController', function(getUserBlogService, createNewBlogService) {
+.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService) {
     var ppc_self = this;
     ppc_self.data = [];
+
     getUserBlogService.getData()
         .then(
             function (r) {
@@ -43,13 +44,22 @@ blog.controller('newsFeedController', function(getBlogService){
             function (r) {
                 console.log('getBlogService Failed');
             });
+
     ppc_self.blogPost = {};
     ppc_self.newPost = function(){
         createNewBlogService.createBlogPost(
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
         );
-    }
+    };
+
+    ppc_self.deleteBlogPost = {};
+    ppc_self.deletePost = function(){
+       deleteBlogPostService.deletePost(
+           ppc_self.deleteBlogPost.title,
+           ppc_self.deleteBlogPost.blogId
+       );
+    };
 });
 
 

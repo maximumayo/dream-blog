@@ -91,7 +91,7 @@ blog.service('signupService', function ($http, $q) {
 });
 
 /**
- * Creates A New Blog Post and Sends it to the Database
+ * Create a new blog post and send it to the database
  * */
 blog.service('createNewBlogService', function($http){
     this.createBlogPost = function(article, title){
@@ -119,4 +119,36 @@ blog.service('createNewBlogService', function($http){
                 console.log('Error', response);
         });
     }
+});
+
+
+/**
+ * Delete a blog post from the dom and from the database
+ *
+ * This needs a blog ID to be passed into it!!!!!
+ */
+blog.service('deleteBlogPostService', function($http){
+   this.deletePost = function(title, blogId){
+       var deleteBlog = 'deleteBlog';
+       var data = $.param({
+          operation: deleteBlog,
+          title: title,
+          blogId: blogId
+       });
+       $http({
+           url: 'operations.php',
+           method: 'post',
+           data: data,
+           headers: {
+               'Content-Type': 'application/x-www-form-urlencoded'
+           }
+
+       })
+           .then(function(response){
+            console.log('delete post function: ',response);
+       },
+           function(response){
+               console.log('You are not authorized to delete this post', response);
+           });
+   }
 });

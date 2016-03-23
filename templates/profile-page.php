@@ -29,7 +29,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a ui-sref="newsfeed" class='links'>Home <span class="sr-only">(current)</span></a>
+                    <li class="active"><a ui-sref="newsfeed" class='links'>Home <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li><a ui-sref="profile" class='links'>My Profile</a></li>
                     <li><a class='links navbar-left'>Log Out</a></li>
@@ -40,53 +41,58 @@
 </div>
 
 
-    <!--TODO: Make sure this is an active controller-->
-    <div class="blogPosts" ng-controller="profilePageController as ppc">
-        <!--<blog-feed-directive></blog-feed-directive>-->
-        <!-- <div class='jumbotron'> -->
-        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#createBlogModal">
-            New Post
-        </button>
+<!--TODO: Make sure this is an active controller-->
+<div class="blogPosts" ng-controller="profilePageController as ppc">
+    <!--<blog-feed-directive></blog-feed-directive>-->
+    <!-- <div class='jumbotron'> -->
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#createBlogModal">
+        New Post
+    </button>
 
 
-        <h1>Blog Feed</h1>
-        <div class='content container-fluid'>
-            <div class='row' ng-repeat='post in ppc.blogList'>
-                <div class='col-xs-8 blogPart'><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
-                <!-- <div class='col-xs-4 blogPart'>{{'By: ' + post.username}}</div> -->
-                <div class='col-xs-4 blogPart'>{{post.added | date:'MM/dd/yyyy @ h:mma'}}</div>
-                <div class='col-xs-12 blogPart'>
-                    <hr>
-                    {{post.article}}
-                </div>
+    <h1>Blog Feed</h1>
+    <div class='content container-fluid'>
+        <div class='row' ng-repeat='post in ppc.blogList'>
+            <div class='col-xs-8 blogPart'><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
+            <!-- <div class='col-xs-4 blogPart'>{{'By: ' + post.username}}</div> -->
+            <div class='col-xs-4 blogPart'>{{post.added | date:'MM/dd/yyyy @ h:mma'}}</div>
+            <!--TODO: Added a delete button for testing-->
+            <button class="btn btn-danger" ng-click="ppc.deletePost()">Delete Post</button>
+            <div class='col-xs-12 blogPart'>
+                <hr>
+                {{post.article}}
             </div>
         </div>
+    </div>
 
 
-        <!-- Modal Creation -->
-        <div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog" aria-labelledby="createBlogModalLabel"
-             data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title" id="createBlogModalLabel">New Blog Post</h3>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <input type='text' placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
-                            <textarea placeholder='Blog Post Content' rows='10' cols='50' ng-model="ppc.blogPost.article"></textarea>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" ng-click="ppc.newPost()" data-dismiss="modal">Save changes</button>
-                    </div>
+    <!-- Modal Creation -->
+    <div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog" aria-labelledby="createBlogModalLabel"
+         data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="createBlogModalLabel">New Blog Post</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type='text' placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
+                        <textarea placeholder='Blog Post Content' rows='10' cols='50'
+                                  ng-model="ppc.blogPost.article"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="ppc.newPost()" data-dismiss="modal">Save
+                        changes
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
