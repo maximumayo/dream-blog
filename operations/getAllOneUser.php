@@ -1,7 +1,7 @@
 <?php
 //require("mysql_connect.php");
 $userId = trim(filter_input(INPUT_POST,'userId',FILTER_SANITIZE_STRING));
-$query = "SELECT users.username, posts.title, post_content.article, posts.added
+$query = "SELECT users.username, posts.title, post_content.article, posts.added, posts.id
             FROM posts
             JOIN users
                 ON users.id = posts.users_id
