@@ -3,14 +3,19 @@
  */
 
 
-function updateBlog(title, article, users_id) {
+//Parameters
+// blog_id : The unique id of each individual blog, this will be given when user creates a blog
+// article: the content that user wants to add or change for their blog
+// users_id: the unique id of that user, this will be given when a new user is created
+
+function updateBlog(blog_id,article,users_id){
     $.ajax({
-        dataType: 'json',
-        data: {
-            operation: 'editBlog',
-            title: title,
-            article: article,
-            users_id: users_id
+        dataType:'json',
+        data:{
+            operation:'editBlog',
+            blog_id:blog_id,
+            article:article,
+            users_id:users_id
         },
         method: 'POST',
         url: 'operations.php',
@@ -19,16 +24,21 @@ function updateBlog(title, article, users_id) {
             console.log(response);
 
         }
-    })
+    });
 }
 
-function deleteBlog(title, blogId) {
+
+// parameters
+// users_id: unique id from that user
+// blog_id : unique id to the blog
+
+function deleteBlog(usersId,blog_id){
     $.ajax({
-        dataType: 'json',
-        data: {
-            operation: 'deleteBlog',
-            title: title,
-            blogId: blogId
+        dataType:'json',
+        data:{
+            operation:'deleteBlog',
+            users_id:usersId,
+            blog_id:blog_id
         },
         method: 'POST',
         url: 'operations.php',
@@ -39,17 +49,18 @@ function deleteBlog(title, blogId) {
 
 }
 
-function newUserCreate(firstname, lastname, email, username, password, phone) {
+
+function newUserCreate(firstname,lastname,email,username,password,phone){
     $.ajax({
-        dataType: 'json',
-        data: {
-            operation: 'newUser',
-            firstName: firstname,
-            lastName: lastname,
-            email: email,
-            username: username,
-            password: password,
-            phone: phone
+        dataType:'json',
+        data:{
+            operation:'newUser',
+            firstName:firstname,
+            lastName:lastname,
+            email:email,
+            username:username,
+            password:password,
+            phone:phone
         },
         method: 'POST',
         url: 'operations.php',
@@ -97,12 +108,13 @@ function postNewBlogArticle(added, article, title) {
     })
 }
 
-function getAllArticlesOneUser(username) {
+
+function getAllArticlesOneUser(userId){
     $.ajax({
-        dataType: 'json',
-        data: {
-            operation: 'getAllOneUser',
-            username: username
+        dataType:'json',
+        data:{
+            operation:'getAllOneUser',
+            userId:userId
         },
         method: "post",
         url: "operations.php",
@@ -111,5 +123,23 @@ function getAllArticlesOneUser(username) {
             console.log(responseData);
         }
 
+    })
+}
+
+
+function deleteUser(username,password){
+    $.ajax({
+        dataType:'json',
+        data:{
+            operation:'deleteUser',
+            username:username,
+            password:password
+        },
+        method:"post",
+        url:"operations.php",
+        success: function(response){
+            var responseData = response;
+            console.log(responseData);
+        }
     })
 }
