@@ -15,12 +15,11 @@ function getBlogListFromServer(){
     })
 }
 
-function postNewBlogArticle(added,article,title){
+function postNewBlogArticle(article,title){
     $.ajax({
         dataType:'json',
         data:{
             operation:'create',
-            added:added,
             article:article,
             title:title,
             users_id:1
