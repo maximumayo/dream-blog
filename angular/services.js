@@ -33,6 +33,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         //var read = 'read';
         var data = $.param({
             operation: 'getAllOneUser',
+            //we need to get the user id somehow
             userId: 4
         });
         var defer = $q.defer();

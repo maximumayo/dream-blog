@@ -64,7 +64,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-danger pull-right" ng-click="ppc.deletePost()">Delete</button>
+                                    <button class="btn btn-danger pull-right" ng-click="ppc.deletePost()">Delete
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -73,36 +74,39 @@
             </div>
         </div>
     </div>
-</div>
+    <!--</div>-->
 
 
-<!-- Modal Creation -->
-<div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog"
-     aria-labelledby="createBlogModalLabel"
-     data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="createBlogModalLabel">New Blog Post</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <!-- <input placeholder='username'> -->
-                    <!-- <input placeholder='date'> -->
-                    <input placeholder='title'> <br>
-                    <textarea placeholder='Blog Post Content' rows='10' cols='50'></textarea>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+    <!-- Modal Creation -->
+    <div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog"
+         aria-labelledby="createBlogModalLabel"
+         data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="createBlogModalLabel">New Blog Post</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- <input placeholder='username'> -->
+                        <!-- <input placeholder='date'> -->
+                        <input placeholder='title' ng-model="ppc.blogPost.title"> <br>
+                    <textarea placeholder='Blog Post Content' rows='10' cols='50'
+                              ng-model="ppc.blogPost.article"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ppc.newPost()">Save
+                        changes
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 
