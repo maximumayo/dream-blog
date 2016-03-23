@@ -3,12 +3,12 @@
  */
 
 
-function updateBlog(title,article,users_id){
+function updateBlog(blog_id,article,users_id){
     $.ajax({
         dataType:'json',
         data:{
             operation:'editBlog',
-            title:title,
+            blog_id:blog_id,
             article:article,
             users_id:users_id
         },
