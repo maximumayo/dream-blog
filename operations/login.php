@@ -1,8 +1,8 @@
 <?php
-require('mysql_connect.php');
-//$username = trim(filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING));
-//$password = trim(filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING));//sha1(trim(filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING)));
-$query = "SELECT * FROM `users` WHERE username = 'klo' and password = 'kokokoko'";
+//require('mysql_connect.php');
+$username = trim(filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING));
+$password = sha1(trim(filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING)));
+$query = "SELECT * FROM `users` WHERE username = '$username' and password = '$password'";
 $result = mysqli_query($conn, $query);
 $output = ['success'=>false];
 if(mysqli_num_rows($result)) {
@@ -14,7 +14,7 @@ if(mysqli_num_rows($result)) {
         //$_SESSION['users_id'] =
     }
     $output = ['success' => true, 'user_id' => $output['data'][0]['id']];
-    $_SESSION['user_id']= $output['user_id'];
+    $_SESSION['users_id']= $output['user_id'];
     //print($_SESSION['user_id']);
     //$output = $output['data'][0]['id'];
     //print_r($output);
