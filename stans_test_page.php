@@ -27,11 +27,12 @@ $added = Date("Y-m-d H:i:s");
 <br><br><br>
 <button onclick="getBlogListFromServer()">Get from Server</button>
 <br><br><br>
-<!--<input id="username" placeholder="username goes here"/> <br><br>-->
-<!--<input id="password" placeholder="password goes here"/> <br><br>-->
+<input id="username" placeholder="username goes here"/> <br><br>
+<input id="password" placeholder="password goes here"/> <br><br>
 <input id="user_id" placeholder="user_id"/><br><br>
 <button onclick="getAllArticlesOneUser($('#username').val())">Get all one user</button>
 <button onclick="deleteUser($('#user_id').val(), $('#password').val())">Delete User</button>
+<button onclick="login($('#username').val(),$('#password').val())">Login</button>
 <br><br><br>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
