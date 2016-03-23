@@ -22,5 +22,9 @@ if(!empty(mysqli_num_rows($result))){
 //    print_r($data);
 //    exit();
 }
+else{
+    $output = ['success' => false , 'errors' => ['No posts for that user']];
+
+}
 
 ?>
