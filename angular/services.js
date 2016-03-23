@@ -33,6 +33,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         //var read = 'read';
         var data = $.param({
             operation: 'getAllOneUser',
+            //we need to get the user id somehow
             userId: 4
         });
         var defer = $q.defer();
@@ -102,7 +103,7 @@ blog.service('createNewBlogService', function($http){
             article: article,
             title: title,
             /** TO DO: the user_id will have to change according to the user posting**/
-            user_id: 2
+            users_id: 4
         });
         $http({
            url: 'operations.php',
