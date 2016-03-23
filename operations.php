@@ -6,7 +6,7 @@ require_once('mysql_connect.php');
 // There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
 
 
-if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']) {
+//if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']) {
 
     if (!empty($_POST['operation'])) {
         $operation = $_POST['operation'];
@@ -45,10 +45,10 @@ if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']
         default:
             $output = ['success' => false, 'errors' => ['invalid operation']];
     }
-}
-else{
-    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
-}
+//}
+//else{
+//    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
+//}
 
 print(json_encode($output));
 ?>
