@@ -6,7 +6,7 @@
                 ON users.id = posts.users_id
               JOIN post_content
                 ON post_content.post_id = posts.id
-              JOIN image
+              LEFT JOIN image
                 ON image.posts_id = posts.id
               ORDER BY posts.added DESC";
     $result = mysqli_query($conn, $query);

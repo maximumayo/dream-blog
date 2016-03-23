@@ -56,8 +56,6 @@
             <div class='col-xs-8 blogPart'><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
             <!-- <div class='col-xs-4 blogPart'>{{'By: ' + post.username}}</div> -->
             <div class='col-xs-4 blogPart'>{{post.added | date:'MM/dd/yyyy @ h:mma'}}</div>
-            <!--TODO: Added a delete button for testing-->
-            <button class="btn btn-danger" ng-click="ppc.deletePost()">Delete Post</button>
             <div class='col-xs-12 blogPart'>
                 <hr>
                 {{post.article}}
@@ -78,7 +76,7 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <input type='text' placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
+                        <input type='text' placeholder='Title' ng-model="ppc.blogPost.title"> <br>
                         <textarea placeholder='Blog Post Content' rows='10' cols='50'
                                   ng-model="ppc.blogPost.article"></textarea>
                     </form>
