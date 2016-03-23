@@ -31,7 +31,7 @@ blog.controller('newsFeedController', function(getBlogService){
 
 
 /** Controller for getting all blog posts for the user profile page **/
-.controller('profilePageController', function(getUserBlogService) {
+.controller('profilePageController', function(getUserBlogService, createNewBlogService) {
     var ppc_self = this;
     ppc_self.data = [];
     getUserBlogService.getData()
@@ -43,6 +43,13 @@ blog.controller('newsFeedController', function(getBlogService){
             function (r) {
                 console.log('getBlogService Failed');
             });
+    ppc_self.blogPost = {};
+    ppc_self.newPost = function(){
+        createNewBlogService.createBlogPost(
+            ppc_self.blogPost.article,
+            ppc_self.blogPost.title
+        );
+    }
 });
 
 

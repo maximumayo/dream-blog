@@ -44,9 +44,9 @@
     <div class="blogPosts" ng-controller="profilePageController as ppc">
         <!--<blog-feed-directive></blog-feed-directive>-->
         <!-- <div class='jumbotron'> -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createBlogModal">New Post
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#createBlogModal">
+            New Post
         </button>
-        <!-- </div> -->
 
 
         <h1>Blog Feed</h1>
@@ -66,24 +66,22 @@
         <!-- Modal Creation -->
         <div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog" aria-labelledby="createBlogModalLabel"
              data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="createBlogModalLabel">New Blog Post</h4>
+                        <h3 class="modal-title" id="createBlogModalLabel">New Blog Post</h3>
                     </div>
                     <div class="modal-body">
                         <form>
-                            <!-- <input placeholder='username'> -->
-                            <!-- <input placeholder='date'> -->
-                            <input placeholder='title'> <br>
-                            <textarea placeholder='Blog Post Content' rows='10' cols='50'></textarea>
+                            <input placeholder='Blog Title' ng-model="ppc.blogPost.title"> <br>
+                            <textarea placeholder='Blog Post Content' rows='10' cols='50' ng-model="ppc.blogPost.article"></textarea>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" ng-click="ppc.newPost()" data-dismiss="modal">Save changes</button>
                     </div>
                 </div>
             </div>
