@@ -46,7 +46,7 @@ function deleteBlog(usersId,blog_id){
 
 }
 
-function newUserCreate(firstname,lastname,email,username,password,phone,added){
+function newUserCreate(firstname,lastname,email,username,password,phone){
     $.ajax({
         dataType:'json',
         data:{
@@ -56,8 +56,7 @@ function newUserCreate(firstname,lastname,email,username,password,phone,added){
             email:email,
             username:username,
             password:password,
-            phone:phone,
-            added:added
+            phone:phone
         },
         method:'POST',
         url:'operations.php',
