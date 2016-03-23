@@ -33,9 +33,7 @@ if (!empty($_POST['operation'])) {
             break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
-            break;
-
-}
+    }
 
 print(json_encode($output));
 ?>
