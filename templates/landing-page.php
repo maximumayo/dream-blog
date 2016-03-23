@@ -1,10 +1,20 @@
 <div class="jumbotron text-center">
 
     <h1>Fluffy Chainsaw Blog</h1>
-    <input type="text" placeholder="email">
-    <input type="password" placeholder="password">
-    <a ui-sref="newsfeed" class="btn btn-success" type="submit">Log In</a>
-    <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a>
 
+    <form name="logForm">
+
+        <input type="text" placeholder="User Name" ng-model="logName" required>
+
+        <input type="password" placeholder="password" ng-model="logPassword" required>
+
+        <span>
+            <input ng-hide="logForm.$valid" type="submit" class="btn btn-danger" value="Log In">
+            <input ng-show="logForm.$valid" type="submit" ui-sref="newsfeed" class="btn btn-success" value="Log In">
+        </span>
+
+        <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a>
+
+    </form>
 
 </div>
