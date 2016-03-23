@@ -1,7 +1,14 @@
 <?php
 //require("mysql_connect.php");
-$username = trim(filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING));
-$query = "select users.username, posts.added, posts.article, posts.title from posts join users on posts.users_id = users.id where users.username = '$username' order by added desc";
+$userId = trim(filter_input(INPUT_POST,'userId',FILTER_SANITIZE_STRING));
+$query = "SELECT users.username, posts.title, post_content.article, posts.added
+            FROM posts
+            JOIN users
+                ON users.id = posts.users_id
+            JOIN post_content
+                ON post_content.post_id = posts.id
+
+            WHERE users.id = $userId";
 $result = mysqli_query($conn, $query);
 $output = ['success' => false];
 if(!empty(mysqli_num_rows($result))){
