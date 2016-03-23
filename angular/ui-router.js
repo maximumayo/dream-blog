@@ -22,7 +22,8 @@ blog.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('profile', {
             url: '/profile',
-            templateUrl: 'templates/profile-page.php'
+            templateUrl: 'templates/profile-page.php',
+            controller: 'profilePageController'
         })
 
 });
