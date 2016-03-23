@@ -31,9 +31,10 @@ if (!empty($_POST['operation'])) {
             break;
         case 'deleteUser':
             include('operations/deleteUser.php');
+            break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
-}
+    }
 
 print(json_encode($output));
 ?>

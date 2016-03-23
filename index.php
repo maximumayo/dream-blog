@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="database.js"></script>
 
-    <script src="database.js"></script>
 
 
 </head>

@@ -2,6 +2,9 @@
  * Created by koreylo on 3/21/16.
  */
 
+// ****** All Functions Ready For Conversion ***** //
+
+
 
 //Parameters
 // blog_id : The unique id of each individual blog, this will be given when user creates a blog
@@ -32,12 +35,12 @@ function updateBlog(blog_id,article,users_id){
 // users_id: unique id from that user
 // blog_id : unique id to the blog
 
-function deleteBlog(usersId,blog_id){
+function deleteBlog(users_id,blog_id){
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteBlog',
-            users_id:usersId,
+            users_id:users_id,
             blog_id:blog_id
         },
         method: 'POST',
@@ -87,15 +90,17 @@ function getBlogListFromServer() {
     })
 }
 
-function postNewBlogArticle(added, article, title) {
+
+//parameters : This userId will be passed to you when user logs in
+
+function postNewBlogArticle(article, title, users_id) {
     $.ajax({
         dataType: 'json',
         data: {
             operation: 'create',
-            added: added,
             article: article,
             title: title,
-            users_id: 1
+            users_id: users_id
         },
         method: "POST",
         url: "operations.php",
@@ -108,7 +113,7 @@ function postNewBlogArticle(added, article, title) {
     })
 }
 
-
+//parameters : This userId will be passed to you when user logs in
 function getAllArticlesOneUser(userId){
     $.ajax({
         dataType:'json',
@@ -127,12 +132,14 @@ function getAllArticlesOneUser(userId){
 }
 
 
-function deleteUser(username,password){
+// Note for deleteUser fucntion to ask for username as well
+
+function deleteUser(user_id,password){
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteUser',
-            username:username,
+            user_id:user_id,
             password:password
         },
         method:"post",
