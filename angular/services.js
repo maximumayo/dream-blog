@@ -26,7 +26,7 @@ blog.service('getBlogService', function($http, $q){
     }
 });
 
-/** Controller for getting all blog posts for the profile page **/
+/** service for getting all blog posts for the profile page **/
 blog.service('getUserBlogService', function ($http, $q) {
     this.getData = function () {
         var gubs_self = this;
@@ -58,7 +58,7 @@ blog.service('getUserBlogService', function ($http, $q) {
     }
 });
 
-
+/** service for a new user sign up **/
 blog.service('signupService', function ($http, $q) {
     this.sendData = function (firstname, lastname, email, username, password, phone) {
         var ss_self = this;
