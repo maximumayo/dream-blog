@@ -53,6 +53,7 @@ blog.controller('newsFeedController', function(getBlogService){
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
         );
+        getUserBlogService.getData();
     };
 
     ppc_self.deleteBlogPost = {};
