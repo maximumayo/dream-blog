@@ -2,13 +2,8 @@
  * Created by koreylo on 3/21/16.
  */
 
-//Functions Ready For Conversion List
-// updateBlog
-// deleteBlog
-// newUserCreate
-// getBlogListFromServer
-// postNewBlogArticle
-// getAllOneUser
+// ****** All Functions Ready For Conversion ***** //
+
 
 
 //Parameters
@@ -137,12 +132,14 @@ function getAllArticlesOneUser(userId){
 }
 
 
-function deleteUser(username,password){
+// Note for deleteUser fucntion to ask for username as well
+
+function deleteUser(user_id,password){
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteUser',
-            username:username,
+            user_id:user_id,
             password:password
         },
         method:"post",

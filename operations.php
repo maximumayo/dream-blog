@@ -9,7 +9,6 @@ if (!empty($_POST['operation'])) {
 
 // There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
 
-
     switch ($operation) {
         case 'editBlog': // Update Blog
             include('operations/editBlog.php');
@@ -31,6 +30,7 @@ if (!empty($_POST['operation'])) {
             break;
         case 'deleteUser':
             include('operations/deleteUser.php');
+            break;
         default:
             $output = ['success' => 'false', 'errors' => ['invalid operation']];
     }
