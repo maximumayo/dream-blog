@@ -5,6 +5,7 @@ require_once('mysql_connect.php');
 
 // There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
 
+
 if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']) {
 
     if (!empty($_POST['operation'])) {
@@ -13,8 +14,10 @@ if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']
         $operation = 'none';
     }
 
-
     switch ($operation) {
+        case 'login':
+            include('operations/login.php');
+            break;
         case 'editBlog': // Update Blog
             include('operations/editBlog.php');
             break;
