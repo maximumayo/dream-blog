@@ -2,16 +2,15 @@
     <div class="row">
         <!--left panel-->
         <div class="col-md-3 left-panel">
-            <div class="profile-image">
+            <div class="profile-image" ng-repeat='post in blogList | limitTo:1'>
                 <!--TODO: Image should come from server in a later version-->
-                <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/7/005/08b/373/15cb74b.jpg">
+                <img class="img-responsive img-circle" ng-src="{{post.url}}">
+                <!--                <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/7/005/08b/373/15cb74b.jpg">-->
             </div>
 
             <div class="new-post">
                 <button type="button" class="btn btn-primary btn-lg align-center" data-toggle="modal"
-                        data-target="#createBlogModal">New
-                    Post
-                </button>
+                        data-target="#createBlogModal">New Post</button>
             </div>
         </div>
         <!--right-panel-->

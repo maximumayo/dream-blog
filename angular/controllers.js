@@ -36,7 +36,16 @@ blog.controller('profilePageController', function (getUserBlogService, createNew
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
         );
-        //getUserBlogService.getData();
+        getUserBlogService.getData()
+            .then(
+                function (r) {
+                    console.log("Test response:", r);
+                    ppc_self.blogList = r.data.data;
+                    console.log('blogList:',ppc_self.blogList);
+                },
+                function (r) {
+                    console.log('getBlogService Failed');
+                });
     };
 
     ppc_self.deleteBlogPost = {};

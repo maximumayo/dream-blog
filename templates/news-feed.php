@@ -29,7 +29,8 @@
 <div class="blogPosts" ng-controller="newsFeedController as nfc">
     <div class='content container-fluid'>
         <div class='row' ng-repeat='post in nfc.blogList'>
-            <div class='col-xs-8 blogPart'><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
+<!--            <img ng-src="{{post.url}}">-->
+            <div class='col-xs-8 blogPart'><img id='profPic' ng-src="{{post.url}}"><h2>{{post.title}}</h2><span>{{' Author: ' + post.username}}</span></div>
             <div class='col-xs-4 blogPart'>{{post.added | date:'MM/dd/yyyy @ h:mma'}}</div>
             <div class='col-xs-12 blogPart'>
                 <hr>

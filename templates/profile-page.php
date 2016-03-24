@@ -26,4 +26,5 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
 <x-addpost-directive></x-addpost-directive>
