@@ -34,7 +34,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         var data = $.param({
             operation: 'getAllOneUser',
             //we need to get the user id somehow
-            userId: user_id
+            users_id: user_id
         });
         var defer = $q.defer();
         $http({
@@ -60,7 +60,19 @@ blog.service('getUserBlogService', function ($http, $q) {
 });
 
 /** service for a new user sign up **/
-blog.service('signupService', function ($http, $q) {
+blog.service('signupService', function ($http, $q, $state) {
+    var ss_self = this;
+
+    this.verify = function (response) {
+        if (response.data.success) {
+            console.log("Success! Rerouting to landing now");
+            $state.go('landing');
+        }
+        else {
+            console.log("DENIED!!");
+        }
+    };
+
     this.sendData = function (firstname, lastname, email, username, password, phone) {
         var ss_self = this;
         var newUser = 'newUser';
@@ -84,6 +96,7 @@ blog.service('signupService', function ($http, $q) {
             .then(
                 function (response) {
                     console.log('Successfully sent form to server: ', response);
+                    ss_self.verify(response);
                 },
                 function (response) {
                     console.log('Error', response);
@@ -169,6 +182,7 @@ blog.service('logInService', function ($http, $q, $state) {
 });
 
 
+
 blog.service('deleteBlogPostService', function ($http) {
     this.deletePost = function (blog_id) {
         var deleteBlog = 'deleteBlog';
@@ -177,7 +191,6 @@ blog.service('deleteBlogPostService', function ($http) {
             operation: deleteBlog,
             users_id: user_id,
             blog_id: blog_id
-
         });
         $http({
             url: 'operations.php',
@@ -234,7 +247,8 @@ blog.service('logoutService', function ($http) {
         var los_self = this;
         var signout = 'signout';
         var data = $.param({
-            operation: signout
+            operation: signout,
+            users_id: user_id
         });
         $http({
             url: 'operations.php',
