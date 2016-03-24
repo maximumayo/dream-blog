@@ -14,8 +14,8 @@
                    class="btn btn-success" value="Log In">
         </span>
 
-        <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a> <br>
-        <span style="color: red; font-weight: bold; text-shadow: .25px .25px black" ng-show="invalidLogin">invalid username/password combination</span>
+        <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a> <br> {{ invalidLogin }}
+        <span style="color: red; font-weight: bold" ng-show="invalidLogin">invalid username/password combination</span>
 
     </form>
 

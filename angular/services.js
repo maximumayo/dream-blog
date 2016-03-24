@@ -126,7 +126,7 @@ blog.service('createNewBlogService', function ($http) {
 //log in service
 blog.service('logInService', function ($http, $q, $state) {
     var lis_self = this;
-    this.invalidLogin = false;
+    invalidLogin = false;
 
     this.verify = function (response) {
         if (response.data.success) {
