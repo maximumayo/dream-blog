@@ -64,8 +64,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-danger pull-right" ng-click="ppc.deletePost()">Delete
-                                    </button>
+                                    <button class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost()
+                                    ">Delete</button>
+                                    <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost()
+                                    ">Edit</button>
                                 </div>
                             </div>
                         </div>
