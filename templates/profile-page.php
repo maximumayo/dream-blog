@@ -35,9 +35,10 @@
     <div class="row">
         <!--left panel-->
         <div class="col-md-3 left-panel">
-            <div class="profile-image">
+            <div class="profile-image" ng-repeat='post in ppc.blogList | limitTo:1'>
                 <!--TODO: Image should come from server in a later version-->
-                <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/7/005/08b/373/15cb74b.jpg">
+                <img class="img-responsive img-circle" ng-src="{{post.url}}">
+<!--                <img class="img-responsive img-circle" src="https://media.licdn.com/media/p/7/005/08b/373/15cb74b.jpg">-->
             </div>
 
             <div class="new-post">
@@ -49,7 +50,7 @@
         </div>
 
         <!--right-panel-->
-        <div class="col-md-9 pull-right blogPosts" ng-controller="profilePageController as ppc">
+        <div class="col-md-9 pull-right blogPosts" >
             <div class="row">
                 <div class="col-md-6" ng-repeat='post in ppc.blogList'>
                     <div class="row">
@@ -64,10 +65,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button  class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost(post.id)
-                                    ">Delete</button>
+                                    <button class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost(post.id)
+                                    ">Delete
+                                    </button>
                                     <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost(post.id)
-                                    ">Edit</button>
+                                    ">Edit
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +104,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ppc.newPost()">Save
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            ng-click="ppc.newPost()">Save
                         changes
                     </button>
                 </div>
