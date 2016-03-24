@@ -139,62 +139,62 @@ blog.service('logInService', function ($http, $q, $state) {
     };
 
 
-        this.logData = function (username, password) {
-            var ls_self = this;
-            //ls_self.id = null;
-            var login = 'login';
-            var data = $.param({
-                operation: login,
-                username: username,
-                password: password
-            });
-           return $http({
-                url: 'operations.php',
-                method: 'post',
-                data: data,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
-                .then(
-                    function (response) {
-                        console.log('Successfully sent form to server: ', response);
-                        lis_self.verify(response);
-                        user_id = response.data['user_id'];
-                    },
-                    function (response) {
-                        console.log('Error', response);
-                    });
-        }
+    this.logData = function (username, password) {
+        var ls_self = this;
+        //ls_self.id = null;
+        var login = 'login';
+        var data = $.param({
+            operation: login,
+            username: username,
+            password: password
+        });
+        return $http({
+            url: 'operations.php',
+            method: 'post',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(
+                function (response) {
+                    console.log('Successfully sent form to server: ', response);
+                    lis_self.verify(response);
+                    user_id = response.data['user_id'];
+                },
+                function (response) {
+                    console.log('Error', response);
+                });
+    }
 });
 
 
-blog.service('deleteBlogPostService', function($http){
-   this.deletePost = function(blog_id){
-       var deleteBlog = 'deleteBlog';
-       console.log('inside the function delete',user_id);
-       var data = $.param({
-          operation: deleteBlog,
-          users_id: user_id,
-          blog_id: blog_id
+blog.service('deleteBlogPostService', function ($http) {
+    this.deletePost = function (blog_id) {
+        var deleteBlog = 'deleteBlog';
+        console.log('inside the function delete', user_id);
+        var data = $.param({
+            operation: deleteBlog,
+            users_id: user_id,
+            blog_id: blog_id
 
-       });
-       $http({
-           url: 'operations.php',
-           method: 'POST',
-           data: data,
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded'
-           }
+        });
+        $http({
+            url: 'operations.php',
+            method: 'POST',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
 
-       }).then(
-           function(response){
-               console.log('delete post function: ',response);
-       },
-           function(response){
-               console.log('You are not authorized to delete this post', response);
-           });
-   }
+        }).then(
+            function (response) {
+                console.log('delete post function: ', response);
+            },
+            function (response) {
+                console.log('You are not authorized to delete this post', response);
+            });
+    }
 });
 
 
@@ -203,30 +203,30 @@ blog.service('deleteBlogPostService', function($http){
  *
  */
 
-blog.service('editBlogPostService', function($http){
-   this.editPost = function(blog_id, article) {
-       var editBlogOp = 'editBlog';
-       var data = $.param({
-           operation: editBlogOp,
-           blog_id: blog_id,
-           article: article,
-           users_id: user_id
-       });
-       $http({
-           url: 'operations.php',
-           method: 'POST',
-           data: data,
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded'
-           }
-       }).then(
-           function(response){
-               console.log('update post function:', response);
-           },
-           function(response){
-               console.log('Unable to update post', response);
-           });
-   }
+blog.service('editBlogPostService', function ($http) {
+    this.editPost = function (blog_id, article) {
+        var editBlogOp = 'editBlog';
+        var data = $.param({
+            operation: editBlogOp,
+            blog_id: blog_id,
+            article: article,
+            users_id: user_id
+        });
+        $http({
+            url: 'operations.php',
+            method: 'POST',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(
+            function (response) {
+                console.log('update post function:', response);
+            },
+            function (response) {
+                console.log('Unable to update post', response);
+            });
+    }
 });
 
 blog.service('logoutService', function ($http) {

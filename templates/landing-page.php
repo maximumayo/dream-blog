@@ -20,6 +20,3 @@
     </form>
 
 </div>
-
-
-<!--ui-sref="newsfeed"-->
