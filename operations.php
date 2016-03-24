@@ -67,12 +67,7 @@ if(!empty($_SESSION['users_id'])) {
                 include('operations/getAllOneUser.php');
                 break;
             case 'create': // This creates a new blog
-                if($_SESSION['users_id'] === $_POST['users_id']) {
-                    include('operations/create.php');
-                }
-                else{
-                    $output = ['success' => false, 'errors' => ['user not authorized']];
-                }
+                include('operations/create.php');
                 break;
             case 'deleteUser':
                 include('operations/deleteUser.php');
