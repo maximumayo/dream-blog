@@ -13,22 +13,6 @@ blog.controller("signupController", function ($scope, signupService) {
             $scope.accountInfo.phoneNumber
         );
     };
-});
-
-
-/** Controller for getting all blog posts for the main/feed page **/
-blog.controller('newsFeedController', function(getBlogService){
-    var nfc_self = this;
-    nfc_self.data = [];
-    getBlogService.getData()
-        .then(
-            function(r){
-                console.log("Test response:", r);
-                nfc_self.blogList = r.data.data;
-        },
-            function(r){
-                console.log('getBlogService Failed');
-            });
 })
 
 
@@ -94,4 +78,11 @@ blog.controller("logInController", function ($scope, logInService) {
         );
     };
     $scope.invalidLogin = logInService.invalidLogin;
+});
+
+blog.controller("logOutController", function (logoutService, $scope) {
+    var loc_self = this;
+    $scope.logoutAttempt = function () {
+        logoutService.logoutData();
+    };
 });
