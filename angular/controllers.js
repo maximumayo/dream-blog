@@ -22,15 +22,15 @@ blog.controller('profilePageController', function(getUserBlogService, createNewB
     var ppc_self = this;
     ppc_self.data = [];
 
-    getUserBlogService.getData()
-        .then(
-            function (r) {
-                console.log("Test response:", r);
-                ppc_self.blogList = r.data.data;
-            },
-            function (r) {
-                console.log('getBlogService Failed');
-            });
+    //getUserBlogService.getData()
+    //    .then(
+    //        function (r) {
+    //            console.log("Test response:", r);
+    //            ppc_self.blogList = r.data.data;
+    //        },
+    //        function (r) {
+    //            console.log('getBlogService Failed');
+    //        });
 
     ppc_self.blogPost = {};
     ppc_self.newPost = function(){
