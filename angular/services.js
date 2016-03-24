@@ -166,33 +166,33 @@ blog.service('logInService', function ($http, $q, $state) {
 });
 
 
-blog.service('deleteBlogPostService', function($http){
-   this.deletePost = function(users_id, blog_id){
-       var deleteBlog = 'deleteBlog';
-       var data = $.param({
-          operation: deleteBlog,
-          //users_id: 4,
-          //blog_id: 23
-          blog_id: blog_id,
-          users_id: users_id
+blog.service('deleteBlogPostService', function ($http) {
+    this.deletePost = function (users_id, blog_id) {
+        var deleteBlog = 'deleteBlog';
+        var data = $.param({
+            operation: deleteBlog,
+            //users_id: 4,
+            //blog_id: 23
+            blog_id: blog_id,
+            users_id: users_id
 
-       });
-       $http({
-           url: 'operations.php',
-           method: 'POST',
-           data: data,
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded'
-           }
+        });
+        $http({
+            url: 'operations.php',
+            method: 'POST',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
 
-       }).then(
-           function(response){
-               console.log('delete post function: ',response);
-       },
-           function(response){
-               console.log('You are not authorized to delete this post', response);
-           });
-   }
+        }).then(
+            function (response) {
+                console.log('delete post function: ', response);
+            },
+            function (response) {
+                console.log('You are not authorized to delete this post', response);
+            });
+    }
 });
 
 
@@ -202,28 +202,54 @@ blog.service('deleteBlogPostService', function($http){
  * This needs a blog ID to be passed into it!!!!!
  */
 
-blog.service('editBlogPostService', function($http){
-   this.editPost = function(blog_id, article, user_id) {
-       var editBlogOp = 'editBlog';
-       var data = $.param({
-           operation: editBlogOp,
-           blog_id: blog_id,
-           user_id: user_id,
-           article: article
-       });
-       $http({
-           url: 'operations.php',
-           method: 'POST',
-           data: data,
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded'
-           }
-       }).then(
-           function(response){
-               console.log('update post function:', response);
-           },
-           function(response){
-               console.log('Unable to update post', response);
-           });
-   }
+blog.service('editBlogPostService', function ($http) {
+    this.editPost = function (blog_id, article, user_id) {
+        var editBlogOp = 'editBlog';
+        var data = $.param({
+            operation: editBlogOp,
+            blog_id: blog_id,
+            user_id: user_id,
+            article: article
+        });
+        $http({
+            url: 'operations.php',
+            method: 'POST',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(
+            function (response) {
+                console.log('update post function:', response);
+            },
+            function (response) {
+                console.log('Unable to update post', response);
+            });
+    }
+});
+
+blog.service('logoutService', function ($http) {
+
+    this.logoutData = function () {
+        var los_self = this;
+        var signout = 'signout';
+        var data = $.param({
+            operation: signout
+        });
+        $http({
+            url: 'operations.php',
+            method: 'post',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(
+                function (response) {
+                    console.log('Successfully logged out!', response);
+                },
+                function (response) {
+                    console.log('Error', response);
+                });
+    }
 });

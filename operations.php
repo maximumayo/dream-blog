@@ -25,7 +25,8 @@ if(empty($_SESSION['users_id'])){
 //    echo "here";
 }
 
-
+//&& $_SESSION['users_id'] === $_POST['users_id']
+// move this check into the switch statements
 if(!empty($_SESSION['users_id'])) {
 
     if (!empty($_POST['operation'])) {
