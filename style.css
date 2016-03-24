@@ -87,6 +87,8 @@ h1{
 
 #profile-page .profile-image img {
     margin: 0 auto;
+    background-color: white;
+    border-radius: 20px;
 }
 
 #profile-page .new-post {

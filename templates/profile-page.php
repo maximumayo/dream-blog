@@ -104,7 +104,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" id='newPostbtn' class="btn btn-primary" data-dismiss="modal"
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
                             ng-click="ppc.newPost()">Save
                         changes
                     </button>
