@@ -34,7 +34,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         var data = $.param({
             operation: 'getAllOneUser',
             //we need to get the user id somehow
-            userId: user_id
+            users_id: user_id
         });
         var defer = $q.defer();
         $http({
@@ -168,7 +168,6 @@ blog.service('logInService', function ($http, $q, $state) {
         }
 });
 
-
 blog.service('deleteBlogPostService', function($http){
    this.deletePost = function(blog_id){
        var deleteBlog = 'deleteBlog';
@@ -203,7 +202,6 @@ blog.service('deleteBlogPostService', function($http){
  *
  */
 
-
 blog.service('editBlogPostService', function($http){
    this.editPost = function(blog_id, article) {
        var editBlogOp = 'editBlog';
@@ -236,7 +234,8 @@ blog.service('logoutService', function ($http) {
         var los_self = this;
         var signout = 'signout';
         var data = $.param({
-            operation: signout
+            operation: signout,
+            users_id: user_id
         });
         $http({
             url: 'operations.php',
