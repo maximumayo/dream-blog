@@ -75,8 +75,6 @@ blog.controller('newsFeedController', function(getBlogService){
 });
 
 
-
-
 blog.controller('newsFeedController', function (getBlogService) {
     var nfc_self = this;
     nfc_self.data = [];
@@ -85,4 +83,15 @@ blog.controller('newsFeedController', function (getBlogService) {
         nfc_self.blogList = r.data.data;
     });
     //console.log('This is the blog List says Trisha',blogList);
+});
+
+blog.controller("logInController", function ($scope, logInService) {
+    var lc_self = this;
+    $scope.loginAttempt = function () {
+        logInService.logData(
+            $scope.logInfo.logName,
+            $scope.logInfo.logPassword
+        );
+    };
+    $scope.invalidLogin = logInService.invalidLogin;
 });
