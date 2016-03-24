@@ -15,8 +15,6 @@ blog.controller("signupController", function ($scope, signupService) {
     };
 });
 
-
-
 /** Controller for getting all blog posts for the user profile page **/
 blog.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
     var ppc_self = this;

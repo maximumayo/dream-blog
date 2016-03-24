@@ -47,7 +47,7 @@
         <br>
         <span>
             <input ng-hide="myForm.$valid" type="submit" class="btn btn-danger" value="Create Account">
-            <input ng-show="myForm.$valid" type="submit" ng-click="createAccount()" ui-sref="landing"
+            <input ng-show="myForm.$valid" type="submit" ng-click="createAccount()"
                    class="btn btn-success" value="Create Account">
         </span>
 

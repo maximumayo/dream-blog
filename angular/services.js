@@ -60,7 +60,7 @@ blog.service('getUserBlogService', function ($http, $q) {
 });
 
 /** service for a new user sign up **/
-blog.service('signupService', function ($http, $q) {
+blog.service('signupService', function ($http, $q, $state) {
     this.sendData = function (firstname, lastname, email, username, password, phone) {
         var ss_self = this;
         var newUser = 'newUser';
@@ -84,6 +84,7 @@ blog.service('signupService', function ($http, $q) {
             .then(
                 function (response) {
                     console.log('Successfully sent form to server: ', response);
+                    $state.go('landing');
                 },
                 function (response) {
                     console.log('Error', response);
