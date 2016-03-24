@@ -64,9 +64,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost()
+                                    <button  class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost(post.id)
                                     ">Delete</button>
-                                    <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost()
+                                    <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost(post.id)
                                     ">Edit</button>
                                 </div>
                             </div>
