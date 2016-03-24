@@ -1,8 +1,6 @@
 var blog = angular.module('blogApp', ['ui.router']);
 
-
 blog.value('user_id', null);
-
 
 blog.directive('addpostDirective', function (getUserBlogService, createNewBlogService, $timeout) {
     return {
@@ -10,9 +8,7 @@ blog.directive('addpostDirective', function (getUserBlogService, createNewBlogSe
         templateUrl: 'templates/profile-content.php',
         controller: 'profilePageController',
         controllerAs: 'ppc',
-        scope: {
-
-        },
+        scope: {},
         link: function (scope, elem, attrs) {
             scope.blogList = {};
 
@@ -29,17 +25,17 @@ blog.directive('addpostDirective', function (getUserBlogService, createNewBlogSe
                     });
 
             elem.find('#save').bind('click', function () {
+
                 console.log("I was clicked!", scope.ppc);
 
-                var title = elem.find('input').val();
-                var article = elem.find('textarea').val();
-                console.log("Input test title: ", title, " Article: ", article);
+                var title = elem.find('input');
+                var article = elem.find('textarea');
 
+                console.log("Input test title: ", title.val(), " Article: ", article.val());
 
+                createNewBlogService.createBlogPost(article.val(), title.val());
 
-                createNewBlogService.createBlogPost(article, title);
-
-                $timeout(function(){
+                $timeout(function () {
                     getUserBlogService.getData()
                         .then(
                             function (r) {
@@ -52,23 +48,9 @@ blog.directive('addpostDirective', function (getUserBlogService, createNewBlogSe
                                 console.log('getBlogService Failed');
                             });
                 }, 600);
-
-
-                //getUserBlogService.getData().then(
-                //    function (r) {
-                //        console.log("Test response in directive:", r);
-                //        scope.ppc.blogList = r.data.data;
-                //    },
-                //    function (r) {
-                //        console.log('getBlogService Failed');
-                //    });
-                //$scope.$apply(function () {
-                //    $scope.ppc.newPost({blogList: scope.blogList});
-                //});
+                article.val("");
+                title.val("");
             });
         }
     };
 });
-
-
-//ng-click="ppc.newPost()"

@@ -197,7 +197,6 @@ blog.service('deleteBlogPostService', function ($http) {
     }
 });
 
-
 /**
  * Update/Edit a blog post from the dom and from the database
  *

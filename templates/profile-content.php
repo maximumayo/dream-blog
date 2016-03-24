@@ -1,6 +1,4 @@
 <div id="profile-page" class="blogPosts container" ng-controller="profilePageController as ppc">
-
-
     <div class="row">
         <!--left panel-->
         <div class="col-md-3 left-panel">
@@ -16,9 +14,8 @@
                 </button>
             </div>
         </div>
-
         <!--right-panel-->
-        <div class="col-md-9 pull-right blogPosts" ">
+        <div class="col-md-9 pull-right blogPosts">
             <div class="row">
                 <div class="col-md-6" ng-repeat='post in blogList'>
                     <div class="row">
@@ -46,12 +43,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-    <!--</div>-->
-
-
     <!-- Modal Creation -->
     <div class="modal fade" id="createBlogModal" tabindex="-1" role="dialog"
          aria-labelledby="createBlogModalLabel"
@@ -65,18 +57,13 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <!-- <input placeholder='username'> -->
-                        <!-- <input placeholder='date'> -->
-                        <input placeholder='title' ng-model="title"> <br>
-                    <textarea placeholder='Blog Post Content' rows='10' cols='50'
-                              ng-model="article"></textarea>
+                        <input placeholder='title'> <br>
+                        <textarea placeholder='Blog Post Content' rows='10' cols='50'></textarea>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="save" data-dismiss="modal" >Save
-                    changes
-                    </button>
+                    <button type="button" class="btn btn-primary" id="save" data-dismiss="modal">Save Changes</button>
                 </div>
             </div>
         </div>

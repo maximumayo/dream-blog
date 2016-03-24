@@ -13,7 +13,6 @@
                 </button>
                 <a class="navbar-brand" href="#">THIS.BLOG</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" ng-controller="logOutController">
@@ -27,5 +26,4 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-
 <x-addpost-directive></x-addpost-directive>
