@@ -16,6 +16,7 @@ blog.controller("signupController", function ($scope, signupService) {
 });
 
 
+
 /** Controller for getting all blog posts for the user profile page **/
 blog.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
     var ppc_self = this;
@@ -75,13 +76,14 @@ blog.controller("logInController", function ($scope, logInService) {
             $scope.logInfo.logName,
             $scope.logInfo.logPassword
         );
-        //logInService.getUserId().then(function ());
-        //console.log('controller user id',$scope.userId);
     };
 
-    //$scope.thissucks = logInService.logData();
-    //console.log('controller user id',$scope.thissucks);
-
-    //console.log('user id', $scope.user_id);
     $scope.invalidLogin = logInService.invalidLogin;
+});
+
+blog.controller("logOutController", function (logoutService, $scope) {
+    var loc_self = this;
+    $scope.logoutAttempt = function () {
+        logoutService.logoutData();
+    };
 });

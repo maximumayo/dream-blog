@@ -126,7 +126,6 @@ blog.service('createNewBlogService', function ($http) {
 //log in service
 blog.service('logInService', function ($http, $q, $state) {
     var lis_self = this;
-    //lis_self.id = null;
     this.invalidLogin = false;
 
     this.verify = function (response) {
@@ -137,17 +136,12 @@ blog.service('logInService', function ($http, $q, $state) {
             console.log("DENIED!!");
             invalidLogin = true;
         }
-    },
-        //this.getUserId = function(response){
-        //    console.log('getuserid ', response);
-        //    return response.data.user_id;
-        //
-        //},
+    };
 
 
         this.logData = function (username, password) {
             var ls_self = this;
-            ls_self.id = null;
+            //ls_self.id = null;
             var login = 'login';
             var data = $.param({
                 operation: login,
@@ -166,8 +160,6 @@ blog.service('logInService', function ($http, $q, $state) {
                     function (response) {
                         console.log('Successfully sent form to server: ', response);
                         lis_self.verify(response);
-                        //lis_self.getUserId(response);
-                        //console.log('call user id',response.data['user_id']);
                         user_id = response.data['user_id'];
                     },
                     function (response) {
@@ -183,8 +175,6 @@ blog.service('deleteBlogPostService', function($http){
        console.log('inside the function delete',user_id);
        var data = $.param({
           operation: deleteBlog,
-          //users_id: 4,
-          //blog_id: 23
           users_id: user_id,
           blog_id: blog_id
 
@@ -211,7 +201,6 @@ blog.service('deleteBlogPostService', function($http){
 /**
  * Update/Edit a blog post from the dom and from the database
  *
- * This needs a blog ID to be passed into it!!!!!
  */
 
 blog.service('editBlogPostService', function($http){
@@ -238,4 +227,30 @@ blog.service('editBlogPostService', function($http){
                console.log('Unable to update post', response);
            });
    }
+});
+
+blog.service('logoutService', function ($http) {
+
+    this.logoutData = function () {
+        var los_self = this;
+        var signout = 'signout';
+        var data = $.param({
+            operation: signout
+        });
+        $http({
+            url: 'operations.php',
+            method: 'post',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(
+                function (response) {
+                    console.log('Successfully logged out!', response);
+                },
+                function (response) {
+                    console.log('Error', response);
+                });
+    }
 });
