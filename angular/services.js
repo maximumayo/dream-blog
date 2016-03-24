@@ -34,7 +34,7 @@ blog.service('getUserBlogService', function ($http, $q) {
         var data = $.param({
             operation: 'getAllOneUser',
             //we need to get the user id somehow
-            userId: 4
+            userId: 3
         });
         var defer = $q.defer();
         $http({
@@ -103,7 +103,7 @@ blog.service('createNewBlogService', function ($http) {
             article: article,
             title: title,
             /** TO DO: the user_id will have to change according to the user posting**/
-            users_id: 4
+            users_id: 3
         });
         $http({
             url: 'operations.php',
@@ -126,6 +126,7 @@ blog.service('createNewBlogService', function ($http) {
 //log in service
 blog.service('logInService', function ($http, $q, $state) {
     var lis_self = this;
+    //lis_self.id = null;
     this.invalidLogin = false;
 
     this.verify = function (response) {
@@ -137,9 +138,15 @@ blog.service('logInService', function ($http, $q, $state) {
             invalidLogin = true;
         }
     },
+        this.getUserId = function(response){
+            console.log('getuserid ', response);
+            return response.data['user_id'];
+        },
+
 
         this.logData = function (username, password) {
             var ls_self = this;
+            ls_self.id = null;
             var login = 'login';
             var data = $.param({
                 operation: login,
@@ -158,6 +165,8 @@ blog.service('logInService', function ($http, $q, $state) {
                     function (response) {
                         console.log('Successfully sent form to server: ', response);
                         lis_self.verify(response);
+                        lis_self.getUserId(response);
+                        console.log('call user id',response.data['user_id']);
                     },
                     function (response) {
                         console.log('Error', response);

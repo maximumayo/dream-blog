@@ -16,24 +16,8 @@ blog.controller("signupController", function ($scope, signupService) {
 });
 
 
-/** Controller for getting all blog posts for the main/feed page **/
-blog.controller('newsFeedController', function(getBlogService){
-    var nfc_self = this;
-    nfc_self.data = [];
-    getBlogService.getData()
-        .then(
-            function(r){
-                console.log("Test response:", r);
-                nfc_self.blogList = r.data.data;
-        },
-            function(r){
-                console.log('getBlogService Failed');
-            });
-})
-
-
 /** Controller for getting all blog posts for the user profile page **/
-.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
+blog.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
     var ppc_self = this;
     ppc_self.data = [];
 
@@ -92,6 +76,13 @@ blog.controller("logInController", function ($scope, logInService) {
             $scope.logInfo.logName,
             $scope.logInfo.logPassword
         );
+        $scope.userId = logInService.getUserId();
+        console.log('controller user id',$scope.userId);
     };
+
+    //$scope.userId = logInService.getUserId();
+    //console.log('controller user id',$scope.userId);
+
+    //console.log('user id', $scope.user_id);
     $scope.invalidLogin = logInService.invalidLogin;
 });
