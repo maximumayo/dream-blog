@@ -16,22 +16,22 @@ blog.controller("signupController", function ($scope, signupService) {
 });
 
 /** Controller for getting all blog posts for the user profile page **/
-blog.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
+blog.controller('profilePageController', function (getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
     var ppc_self = this;
     ppc_self.data = [];
 
-    getUserBlogService.getData()
-        .then(
-            function (r) {
-                console.log("Test response:", r);
-                ppc_self.blogList = r.data.data;
-            },
-            function (r) {
-                console.log('getBlogService Failed');
-            });
+    //getUserBlogService.getData()
+    //    .then(
+    //        function (r) {
+    //            console.log("Test response:", r);
+    //            ppc_self.blogList = r.data.data;
+    //        },
+    //        function (r) {
+    //            console.log('getBlogService Failed');
+    //        });
 
     ppc_self.blogPost = {};
-    ppc_self.newPost = function(){
+    ppc_self.newPost = function () {
         createNewBlogService.createBlogPost(
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
@@ -49,14 +49,14 @@ blog.controller('profilePageController', function(getUserBlogService, createNewB
     };
 
     ppc_self.deleteBlogPost = {};
-    ppc_self.deletePost = function(id){
-       deleteBlogPostService.deletePost(
-           id
-       );
+    ppc_self.deletePost = function (id) {
+        deleteBlogPostService.deletePost(
+            id
+        );
     };
 
     ppc_self.editBlogPost = {};
-    ppc_self.editPost = function(id) {
+    ppc_self.editPost = function (id) {
         editBlogPostService.editPost(
             id,
             //ppc_self.editBlogPost.user_id,
