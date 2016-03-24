@@ -167,3 +167,18 @@ function login(username, password) {
         }
     })
 }
+
+function signout() {
+    $.ajax({
+        dataType: 'json',
+        data: {
+            operation: 'signout',
+        },
+        method: "post",
+        url: "operations.php",
+        success: function (response) {
+            var responseData = response;
+            console.log(responseData);
+        }
+    })
+}
