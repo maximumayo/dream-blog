@@ -140,7 +140,11 @@ blog.service('logInService', function ($http, $q, $state) {
     },
         this.getUserId = function(response){
             console.log('getuserid ', response);
-            return response.data['user_id'];
+            return {
+                response: response
+            }
+            //var userblogid = response.data.user_id;
+
         },
 
 
