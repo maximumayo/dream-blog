@@ -57,10 +57,10 @@ blog.controller('newsFeedController', function(getBlogService){
     };
 
     ppc_self.deleteBlogPost = {};
-    ppc_self.deletePost = function(){
+    ppc_self.deletePost = function(id){
        deleteBlogPostService.deletePost(
            ppc_self.deleteBlogPost.users_id,
-           ppc_self.deleteBlogPost.blog_id
+           id
        );
     };
 

@@ -136,7 +136,7 @@ blog.service('deleteBlogPostService', function($http){
           //users_id: 4,
           //blog_id: 23
           blog_id: blog_id,
-          users_id: users_id
+          users_id: 4
 
        });
        $http({
