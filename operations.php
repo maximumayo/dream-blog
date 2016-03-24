@@ -1,12 +1,32 @@
 <?php
+session_start();
 require_once('mysql_connect.php');
 
 
 
-// There is going to be a authoriztion check here that determines if the user is allowed to perform an operation
+//print_r($_SESSION['users_id']);
+//$_POST['operation'] = "login";
+
+if(empty($_SESSION['users_id'])){
+    if (!empty($_POST['operation'])) {
+        $operation = $_POST['operation'];
+//        echo $operation;
+    } else {
+        $operation = 'none';
+//        echo "else" .$operation;
+    }
+
+    if($operation == 'login'){
+//        echo "should be here";
+        include('operations/login.php');
+        print(json_encode($output));
+        exit();
+    }
+//    echo "here";
+}
 
 
-//if(!empty($_SESSION['users_id']) && $_SESSION['users_id'] === $_POST['users_id']) {
+if(!empty($_SESSION['users_id'])) {
 
     if (!empty($_POST['operation'])) {
         $operation = $_POST['operation'];
@@ -15,9 +35,9 @@ require_once('mysql_connect.php');
     }
 
     switch ($operation) {
-        case 'login':
-            include('operations/login.php');
-            break;
+//        case 'login':
+//            include('operations/login.php');
+//            break;
         case 'editBlog': // Update Blog
             include('operations/editBlog.php');
             break;
@@ -45,7 +65,7 @@ require_once('mysql_connect.php');
         default:
             $output = ['success' => false, 'errors' => ['invalid operation']];
     }
-//}
+}
 //else{
 //    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
 //}
