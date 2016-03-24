@@ -13,11 +13,12 @@ blog.controller("signupController", function ($scope, signupService) {
             $scope.accountInfo.phoneNumber
         );
     };
-})
+});
+
 
 
 /** Controller for getting all blog posts for the user profile page **/
-.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
+blog.controller('profilePageController', function(getUserBlogService, createNewBlogService, deleteBlogPostService, editBlogPostService) {
     var ppc_self = this;
     ppc_self.data = [];
 
@@ -37,22 +38,21 @@ blog.controller("signupController", function ($scope, signupService) {
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
         );
-        getUserBlogService.getData();
+        //getUserBlogService.getData();
     };
 
     ppc_self.deleteBlogPost = {};
-    ppc_self.deletePost = function(){
+    ppc_self.deletePost = function(id){
        deleteBlogPostService.deletePost(
-           ppc_self.deleteBlogPost.users_id,
-           ppc_self.deleteBlogPost.blog_id
+           id
        );
     };
 
     ppc_self.editBlogPost = {};
-    ppc_self.editPost = function() {
+    ppc_self.editPost = function(id) {
         editBlogPostService.editPost(
-            ppc_self.editBlogPost.blog_id,
-            ppc_self.editBlogPost.user_id,
+            id,
+            //ppc_self.editBlogPost.user_id,
             ppc_self.editBlogPost.article
         );
     };
@@ -63,7 +63,7 @@ blog.controller('newsFeedController', function (getBlogService) {
     var nfc_self = this;
     nfc_self.data = [];
     getBlogService.getData().then(function (r) {
-        console.log("Test response:", r);
+        //console.log("Test response:", r);
         nfc_self.blogList = r.data.data;
     });
     //console.log('This is the blog List says Trisha',blogList);
@@ -77,6 +77,7 @@ blog.controller("logInController", function ($scope, logInService) {
             $scope.logInfo.logPassword
         );
     };
+
     $scope.invalidLogin = logInService.invalidLogin;
 });
 
