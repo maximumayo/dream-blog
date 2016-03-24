@@ -1,4 +1,4 @@
-<div class='bgimg container-fluid'>
+<div class='container-fluid'>
     <nav class="navbar" id='navbar'>
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,7 +16,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a ui-sref="newsfeed" class='links'>Home <span class="sr-only">(current)</span></a>
+                    <li class="active"><a ui-sref="newsfeed" class='links'>Home <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li><a ui-sref="profile" class='links'>My Profile</a></li>
                     <li><a ui-sref="landing" class='links navbar-left'>Log Out</a></li>
@@ -39,3 +40,4 @@
         </div>
     </div>
 </div>
+
