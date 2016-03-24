@@ -5,7 +5,8 @@ blog.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('landing', {
             url: '/landing',
-            templateUrl: 'templates/landing-page.php'
+            templateUrl: 'templates/landing-page.php',
+            controller: 'logInController'
         })
 
         .state('registration', {
