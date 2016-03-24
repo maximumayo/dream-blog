@@ -7,7 +7,10 @@ $query = "SELECT users.username, posts.title, post_content.article, posts.added,
                 ON users.id = posts.users_id
             JOIN post_content
                 ON post_content.post_id = posts.id
-            WHERE users.id = $userId";
+			LEFT JOIN image
+                ON image.users_id = users.id
+            WHERE users.id =  '$userId'
+            ORDER BY posts.added DESC";
 $result = mysqli_query($conn, $query);
 $output = ['success' => false];
 if(!empty(mysqli_num_rows($result))){
