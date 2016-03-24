@@ -35,10 +35,10 @@ $added = Date("Y-m-d H:i:s");
 <button onclick="login($('#username').val(),$('#password').val())">Login</button>
 <br><br><br>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="operations/upload.php" id="multiform" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input id='button' type="submit" value="Upload Image" name="submit">
 </form>
 </body>
 </html>

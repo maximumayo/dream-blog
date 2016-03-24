@@ -84,3 +84,48 @@ function login(username, password) {
         }
     })
 }
+
+// function uploadProfilePic(fileToUpload){
+//     $.ajax({
+//         type:'post',
+//         url:"operations/upload.php",
+//         data:{
+//             fileToUpload:fileToUpload,
+//             submit:'gogogo'
+//         },
+//         cache:false,
+//         contentType:false,
+//         processData:false,
+//         success: function(response){
+//             var responseData=response;
+//             console.log(responseData);
+//         }
+//     })
+//
+// }
+$(document).ready(function(){
+    $('#button').click(function(){
+        event.preventDefault();
+        upload();
+    })
+});
+
+
+
+function upload() {
+    var formObj = $("#multiform");
+    var formURL = formObj.attr("action");
+    var formData = new FormData(formObj[0]);
+    $.ajax({
+        url: formURL,
+        type: 'POST',
+        data: formData,
+        mimeType: "multipart/form-data",
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (response) {
+            console.log(response);
+        }
+    })
+}
