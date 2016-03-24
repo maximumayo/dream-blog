@@ -4,17 +4,22 @@
 
     <form name="logForm">
 
-        <input type="text" placeholder="User Name" ng-model="logName" required>
+        <input type="text" placeholder="User Name" ng-model="logInfo.logName" required>
 
-        <input type="password" placeholder="password" ng-model="logPassword" required>
+        <input type="password" placeholder="password" ng-model="logInfo.logPassword" required>
 
         <span>
             <input ng-hide="logForm.$valid" type="submit" class="btn btn-danger" value="Log In">
-            <input ng-show="logForm.$valid" type="submit" ui-sref="newsfeed" class="btn btn-success" value="Log In">
+            <input ng-show="logForm.$valid" type="submit" ng-click="loginAttempt()"
+                   class="btn btn-success" value="Log In">
         </span>
 
-        <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a>
+        <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a> <br>
+        <span style="color: red; font-weight: bold; text-shadow: .25px .25px black" ng-show="invalidLogin">invalid username/password combination</span>
 
     </form>
 
 </div>
+
+
+<!--ui-sref="newsfeed"-->
