@@ -3,7 +3,8 @@
 //$article = trim(filter_input(INPUT_POST,'article',FILTER_SANITIZE_STRING));
 $article = addslashes($_POST['article']);
 $title = addslashes($_POST['title']);
-$added = Date("Y-m-d H:i:s");
+date_default_timezone_set('America/Los_Angeles');
+$added = date("Y-m-d h:i:s");
 $user_id = trim(filter_input(INPUT_POST,'users_id',FILTER_SANITIZE_NUMBER_INT));
 $query = "insert into `posts` set `added`='$added', `title`='$title', `users_id`='$user_id'";
 $output = ['success' => false];

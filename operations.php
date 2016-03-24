@@ -36,9 +36,6 @@ if(!empty($_SESSION['users_id'])) {
     }
 
     switch ($operation) {
-//        case 'login':
-//            include('operations/login.php');
-//            break;
         case 'editBlog': // Update Blog
             include('operations/editBlog.php');
             break;
@@ -67,9 +64,9 @@ if(!empty($_SESSION['users_id'])) {
             $output = ['success' => false, 'errors' => ['invalid operation']];
     }
 }
-//else{
-//    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
-//}
+else{
+    $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
+}
 
 print(json_encode($output));
 ?>
