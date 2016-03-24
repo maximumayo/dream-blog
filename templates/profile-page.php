@@ -50,30 +50,34 @@
 
         <!--right-panel-->
         <div class="col-md-9 pull-right blogPosts" ng-controller="profilePageController as ppc">
-            <div class="row">
-                <div class="col-md-6" ng-repeat='post in ppc.blogList'>
-                    <div class="row">
-                        <div class="col-xs-11 blogPart">
-                            <div class='row'>
-                                <div class="col-xs-12">
-                                    <h3>{{post.title}}</h3>
-                                    <span>{{' Author: ' + post.username+ " - "}}</span>
-                                    <span>{{post.added}}</span>
-                                    <p>{{post.article}}</p>
+<!--            <update-directive profile-posts="ppc.blogList" update-data="ppc.getUserBlogService.getData()">-->
+                <div class="row">
+                    <div class="col-md-6" ng-repeat='post in ppc.blogList'>
+                        <div class="row">
+                            <div class="col-xs-11 blogPart">
+                                <div class='row'>
+                                    <div class="col-xs-12">
+                                        <h3>{{post.title}}</h3>
+                                        <span>{{' Author: ' + post.username+ " - "}}</span>
+                                        <span>{{post.added}}</span>
+                                        <p>{{post.article}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <button  class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost(post.id)
-                                    ">Delete</button>
-                                    <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost(post.id)
-                                    ">Edit</button>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-sm btn-danger pull-right" ng-click="ppc.deletePost(post.id)
+                                    ">Delete
+                                        </button>
+                                        <button class="btn btn-sm btn-warning pull-right" ng-click="ppc.editPost(post.id)
+                                    ">Edit
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+<!--            </update-directive>-->
         </div>
     </div>
     <!--</div>-->
@@ -101,7 +105,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ppc.newPost()">Save
+                    <button type="button" id='newPostbtn' class="btn btn-primary" data-dismiss="modal" ng-click="ppc.newPost()">Save
                         changes
                     </button>
                 </div>

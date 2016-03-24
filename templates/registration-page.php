@@ -36,7 +36,7 @@
         <br>
 
         <input type="email" placeholder="Email" ng-model="accountInfo.email"
-               pattern="^[a-zA-Z0-9]+.?[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+|[a-zA-Z0-9]@[a-zA-Z0-9]\.[a-zA-Z0-9]"
+               pattern="^[a-zA-Z0-9]+.+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+|[a-zA-Z0-9]@[a-zA-Z0-9]\.[a-zA-Z0-9]"
                required>
         <span class="signup"><i>ex: myemail@website.com</i></span>
         <br>
