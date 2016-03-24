@@ -5,7 +5,7 @@
 //$password = sha1($_POST['password']);
 //$output = ['success'=> false];
 
-$user_id = trim(filter_input(INPUT_POST,'user_id',FILTER_SANITIZE_NUMBER_INT));
+$user_id = trim(filter_input(INPUT_POST,'users_id',FILTER_SANITIZE_NUMBER_INT));
 //$password = sha1(trim(filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING)));
 $data = ['success'=> false];
 $query = "DELETE FROM  `users` WHERE  `id` =  '$user_id'";
