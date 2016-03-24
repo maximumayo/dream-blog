@@ -1,6 +1,6 @@
 /** Service for getting all blog posts for the main/feed page **/
-blog.service('getBlogService', function($http, $q){
-    this.getData = function(){
+blog.service('getBlogService', function ($http, $q) {
+    this.getData = function () {
         var gbs_self = this;
         var read = 'read';
         var data = $.param({operation: read});
@@ -14,15 +14,15 @@ blog.service('getBlogService', function($http, $q){
             }
         })
             .then(
-                function(response){
+                function (response) {
                     console.log('successful Resp: ', response);
                     defer.resolve(response);
                 },
-                function(response){
+                function (response) {
                     console.log('Error', response);
                     defer.reject('Fail');
                 });
-            return defer.promise;
+        return defer.promise;
     }
 });
 
@@ -94,8 +94,8 @@ blog.service('signupService', function ($http, $q) {
 /**
  * Create a new blog post and send it to the database
  * */
-blog.service('createNewBlogService', function($http){
-    this.createBlogPost = function(article, title){
+blog.service('createNewBlogService', function ($http) {
+    this.createBlogPost = function (article, title) {
         //var cbs_self = this;
         var create = 'create';
         var data = $.param({
@@ -106,28 +106,66 @@ blog.service('createNewBlogService', function($http){
             user_id: 4
         });
         $http({
-           url: 'operations.php',
-           method: 'post',
-           data: data,
-           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-           }
+            url: 'operations.php',
+            method: 'post',
+            data: data,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
         })
-            .then(function (response){
-                console.log('create post success response: ', response);
-            },
-            function (response){
-                console.log('Error', response);
-        });
+            .then(function (response) {
+                    console.log('create post success response: ', response);
+                },
+                function (response) {
+                    console.log('Error', response);
+                });
     }
 });
 
 
-/**
- * Delete a blog post from the dom and from the database
- *
- * This needs a blog ID to be passed into it!!!!!
- */
+//log in service
+blog.service('logInService', function ($http, $q, $state) {
+    var lis_self = this;
+    this.invalidLogin = false;
+
+    this.verify = function (response) {
+        if (response.data.success) {
+            $state.go('newsfeed');
+        }
+        else {
+            console.log("DENIED!!");
+            invalidLogin = true;
+        }
+    },
+
+        this.logData = function (username, password) {
+            var ls_self = this;
+            var login = 'login';
+            var data = $.param({
+                operation: login,
+                username: username,
+                password: password
+            });
+            $http({
+                url: 'operations.php',
+                method: 'post',
+                data: data,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+                .then(
+                    function (response) {
+                        console.log('Successfully sent form to server: ', response);
+                        lis_self.verify(response);
+                    },
+                    function (response) {
+                        console.log('Error', response);
+                    });
+        }
+});
+
+
 blog.service('deleteBlogPostService', function($http){
    this.deletePost = function(users_id, blog_id){
        var deleteBlog = 'deleteBlog';

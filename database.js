@@ -4,8 +4,6 @@
 
 // ****** All Functions Ready For Conversion ***** //
 
-
-
 //Parameters
 // blog_id : The unique id of each individual blog, this will be given when user creates a blog
 // article: the content that user wants to add or change for their blog
@@ -35,12 +33,16 @@ function updateBlog(blog_id,article,users_id){
 // users_id: unique id from that user
 // blog_id : unique id to the blog
 
+
 function deleteBlog(users_id,blog_id){
+
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteBlog',
+
             users_id:users_id,
+
             blog_id:blog_id
         },
         method: 'POST',
@@ -114,6 +116,7 @@ function postNewBlogArticle(article, title, users_id) {
 }
 
 //parameters : This userId will be passed to you when user logs in
+
 function getAllArticlesOneUser(userId){
     $.ajax({
         dataType:'json',
@@ -135,11 +138,13 @@ function getAllArticlesOneUser(userId){
 // Note for deleteUser fucntion to ask for username as well
 
 function deleteUser(user_id,password){
+
     $.ajax({
         dataType:'json',
         data:{
             operation:'deleteUser',
             user_id:user_id,
+
             password:password
         },
         method:"post",
