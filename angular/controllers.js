@@ -37,22 +37,21 @@ blog.controller('profilePageController', function(getUserBlogService, createNewB
             ppc_self.blogPost.article,
             ppc_self.blogPost.title
         );
-        getUserBlogService.getData();
+        //getUserBlogService.getData();
     };
 
     ppc_self.deleteBlogPost = {};
     ppc_self.deletePost = function(id){
        deleteBlogPostService.deletePost(
-           ppc_self.deleteBlogPost.users_id,
            id
        );
     };
 
     ppc_self.editBlogPost = {};
-    ppc_self.editPost = function() {
+    ppc_self.editPost = function(id) {
         editBlogPostService.editPost(
-            ppc_self.editBlogPost.blog_id,
-            ppc_self.editBlogPost.user_id,
+            id,
+            //ppc_self.editBlogPost.user_id,
             ppc_self.editBlogPost.article
         );
     };
@@ -80,8 +79,8 @@ blog.controller("logInController", function ($scope, logInService) {
         //console.log('controller user id',$scope.userId);
     };
 
-    $scope.thissucks = logInService.logData();
-    console.log('controller user id',$scope.userId);
+    //$scope.thissucks = logInService.logData();
+    //console.log('controller user id',$scope.thissucks);
 
     //console.log('user id', $scope.user_id);
     $scope.invalidLogin = logInService.invalidLogin;
