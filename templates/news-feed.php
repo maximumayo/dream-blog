@@ -15,12 +15,12 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" ng-controller="logOutController">
                     <li class="active"><a ui-sref="newsfeed" class='links'>Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li><a ui-sref="profile" class='links'>My Profile</a></li>
-                    <li><a ui-sref="landing" class='links navbar-left'>Log Out</a></li>
+                    <li><a ui-sref="landing" ng-click="logoutAttempt()" class='links navbar-left'>Log Out</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
