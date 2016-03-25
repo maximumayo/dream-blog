@@ -64,12 +64,15 @@ blog.service('signupService', function ($http, $q, $state) {
     var ss_self = this;
 
     this.verify = function (response) {
+        $('#signup-error').empty();
+
         if (response.data.success) {
             console.log("Success! Rerouting to landing now");
             $state.go('landing');
         }
         else {
             console.log("DENIED!!");
+            $('#signup-error').append(response.data.errors[0]);
         }
     };
 
@@ -142,12 +145,14 @@ blog.service('logInService', function ($http, $q, $state) {
     invalidLogin = false;
 
     this.verify = function (response) {
+        $('#login-error').empty();
+
         if (response.data.success) {
             $state.go('newsfeed');
         }
         else {
             console.log("DENIED!!");
-            invalidLogin = true;
+            $('#login-error').append('Invalid username/password combination');
         }
     };
 

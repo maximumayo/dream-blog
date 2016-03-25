@@ -2,7 +2,11 @@
     .signup {
         position: absolute;
     }
+    #signup-error {
+        color: red;
+    }
 </style>
+
 <div class="jumbotron text-center signUpContainer">
 
     <h1>Create An Account</h1>
@@ -50,6 +54,8 @@
             <input ng-show="myForm.$valid" type="submit" ng-click="createAccount()"
                    class="btn btn-success" value="Create Account">
         </span>
+        <br>
+        <span id="signup-error"></span>
 
     </form>
 
