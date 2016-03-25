@@ -10,24 +10,24 @@
     // Check to see if email or username exists
     $searchUsername = "SELECT username FROM users WHERE username = '$username'";
     $searchUsernameResult = mysqli_query($conn,$searchUsername);
-    $searchEmail = "SELECT email FROM users WHERE email = $email";
+    $searchEmail = "SELECT email FROM users WHERE email = '$email'";
     $emailSearchResult = mysqli_query($conn,$searchEmail);
 
     if(mysqli_num_rows($searchUsernameResult)>0){
-        $output = ['success' => 'false', 'errors' => ['username already taken']];
+        $output = ['success' => false, 'errors' => ['username already taken']];
         //exit();
     }
     elseif(mysqli_num_rows($emailSearchResult) > 0){
-        $output = ['success' => 'false', 'errors' => ['email already exits']];
-        exit();
+        $output = ['success' => false, 'errors' => ['email already exits']];
+//        exit();
     }
     else{
         $query = "INSERT INTO `users`(`id`, `given_name`, `family_name`, `email`, `username`, `password`, `phone`) VALUES ('','$givenName','$familyName','$email','$username','$password','$phone')";
         $result = mysqli_query($conn,$query);
         if(mysqli_affected_rows($conn) > 0){
-            $output = ['success' => 'true'];
+            $output = ['success' => true];
         }
         else{
-            $output = ['success' => 'false', 'errors' => ['It did not work']];
+            $output = ['success' => false, 'errors' => ['It did not work']];
         }
     }
