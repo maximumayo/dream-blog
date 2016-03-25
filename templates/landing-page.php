@@ -1,10 +1,11 @@
+<div id="logo"><img src="images/logo.png"></div>
 <div class="jumbotron text-center">
 
-    <h1>Fluffy Chainsaw Blog</h1>
+    <h2>Don't let your dreams be memes</h2>
 
     <form name="logForm">
 
-        <input class='form-control' type="text" placeholder="User Name" ng-model="logInfo.logName" required>
+        <input class='form-control' type="text" placeholder="Username" ng-model="logInfo.logName" required>
 
         <input class='form-control' type="password" placeholder="Password" ng-model="logInfo.logPassword" required>
 
