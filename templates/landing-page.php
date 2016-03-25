@@ -1,4 +1,4 @@
-<div id="logo"><img src="images/logo.png"></div>
+<div id="logo"><img src="images/dreamy.png"></div>
 <div class="jumbotron text-center">
 
     <h2>Don't let your dreams be memes</h2>
