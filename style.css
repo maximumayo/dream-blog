@@ -101,11 +101,14 @@ h1{
 
 /*Landing Page CSS*/
 
-.jumbotron{
+.landingContainer, .signUpContainer{
     width: 100%;
     background-color: transparent;
     color: #F3F5F7;
     position: absolute;
+}
+
+.landingContainer{
     top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -132,4 +135,10 @@ h1{
 #logo img{
     width: 100%;
     height: 100%;
+}
+
+.signUpContainer{
+    background-color: rgba(0,0,0,0.3);
+    height: 100%;
+
 }

@@ -3,7 +3,7 @@
         position: absolute;
     }
 </style>
-<div class="jumbotron text-center">
+<div class="jumbotron text-center signUpContainer">
 
     <h1>Create An Account</h1>
 

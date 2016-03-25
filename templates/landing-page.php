@@ -1,5 +1,5 @@
 <div id="logo"><img src="images/dreamy.png"></div>
-<div class="jumbotron text-center">
+<div class="jumbotron text-center landingContainer">
 
     <h2>Don't let your dreams be memes</h2>
 
