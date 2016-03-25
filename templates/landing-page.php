@@ -1,3 +1,10 @@
+<style>
+    #login-error {
+        color: red;
+        font-size: 18px;
+    }
+</style>
+
 <div id="logo"><img src="images/dreamy.png"></div>
 <div class="jumbotron text-center landingContainer">
 
@@ -16,7 +23,7 @@
         </span>
 
         <a ui-sref="registration" class="btn btn-primary" type="submit">Sign Up</a> <br> {{ invalidLogin }}
-        <span style="color: red; font-weight: bold" ng-show="invalidLogin">invalid username/password combination</span>
+        <span id="login-error"></span>
 
     </form>
 
