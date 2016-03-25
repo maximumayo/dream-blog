@@ -99,3 +99,24 @@ h1{
     width: 40px;
 }
 
+/*Landing Page CSS*/
+
+.jumbotron{
+    width: 100%;
+    background-color: transparent;
+    color: #F3F5F7;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.jumbotron h1{
+    font-family: 'Short Stack', cursive;
+    text-shadow: 2px 2px 2px #C0C6D3;
+}
+
+.form-control{
+    display: inline-block;
+    width: auto;
+}
