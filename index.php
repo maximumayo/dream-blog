@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dreams Blog</title>
+    <title>Dream Blog</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/moonshort.png">
     <!--jquery-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
