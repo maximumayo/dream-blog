@@ -6,7 +6,8 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fluffy Chainsaw Blog</title>
+    <title>Dreams Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/moonshort.png">
     <!--jquery-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!--bootstrap jquery-->
@@ -23,9 +24,7 @@ session_start();
     <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
     <!--css-->
     <link rel="stylesheet" href="style.css">
-
     <script src="database.js"></script>
-
 
 
 </head>
@@ -39,5 +38,6 @@ session_start();
 <script src="angular/ui-router.js" type="text/javascript"></script>
 <script src="angular/controllers.js" type="text/javascript"></script>
 <script src="angular/services.js" type="text/javascript"></script>
+
 </body>
 </html>

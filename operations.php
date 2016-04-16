@@ -3,11 +3,10 @@ session_start();
 require_once('mysql_connect.php');
 
 
-
 //print_r($_SESSION['users_id']);
 //$_POST['operation'] = "login";
 
-if(empty($_SESSION['users_id'])){
+if (empty($_SESSION['users_id'])) {
     if (!empty($_POST['operation'])) {
         $operation = $_POST['operation'];
 //        echo $operation;
@@ -16,18 +15,16 @@ if(empty($_SESSION['users_id'])){
 //        echo "else" .$operation;
     }
 
-    if($operation == 'login'){
+    if ($operation == 'login') {
 //        echo "should be here";
         include('operations/login.php');
         print(json_encode($output));
         exit();
-    }
-    elseif($operation == 'newUser'){
+    } elseif ($operation == 'newUser') {
         include('operations/newUser.php');
         print(json_encode($output));
         exit();
-    }
-    else{
+    } else {
         exit();
     }
 //    echo "here";
@@ -36,11 +33,11 @@ if(empty($_SESSION['users_id'])){
 //&& $_SESSION['users_id'] === $_POST['users_id']
 // move this check into the switch statements
 
-if(!empty($_SESSION['users_id'])) {
+if (!empty($_SESSION['users_id'])) {
 
     if (!empty($_POST['operation'])) {
         $operation = $_POST['operation'];
-        if($operation === 'read'){
+        if ($operation === 'read') {
             include('operations/get.php');
             print(json_encode($output));
             exit();
@@ -49,7 +46,7 @@ if(!empty($_SESSION['users_id'])) {
         $operation = 'none';
     }
 
-    if($_SESSION['users_id'] === $_POST['users_id']) {
+    if ($_SESSION['users_id'] === $_POST['users_id']) {
         switch ($operation) {
             case 'editBlog': // Update Blog
                 include('operations/editBlog.php');
@@ -78,12 +75,10 @@ if(!empty($_SESSION['users_id'])) {
             default:
                 $output = ['success' => false, 'errors' => ['invalid operation']];
         }
-    }
-    else{
+    } else {
         $output = ['success' => false, 'erros' => ['User not authorized to perform operation']];
     }
-}
-else{
+} else {
     $output = ['success' => false, 'errors' => ['session has expired please log in again to continue']];
 //    header("Location: index.php");
 }
