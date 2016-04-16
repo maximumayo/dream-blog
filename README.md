@@ -1,7 +1,5 @@
 # Dream Blog
 
-* Live Demo http://www.maximilianmayo.com/dream-blog/
-
 ## Project Notes
 * This was a really fun group project!
 * The six of us worked all day for three days straight to produce this MVP
